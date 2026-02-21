@@ -1,0 +1,214 @@
+id,university_id,major_name,degree_type
+1,UW-Madison,African American Studies,BA
+2,UW-Madison,African American Studies,BS
+3,UW-Madison,African Cultural Studies,BA
+4,UW-Madison,African Cultural Studies,BS
+5,UW-Madison,Agricultural Business Management,BS
+6,UW-Madison,Agricultural and Applied Economics,BS
+7,UW-Madison,Agroecology,BS
+8,UW-Madison,Agronomy,BS
+9,UW-Madison,Animal and Veterinary Biosciences,BS
+10,UW-Madison,Anthropology,BA
+11,UW-Madison,Anthropology,BS
+12,UW-Madison,"Applied Mathematics, Engineering, and Physics",BS
+13,UW-Madison,Art,BS
+14,UW-Madison,Art,BFA
+15,UW-Madison,Art Education,BS
+16,UW-Madison,Art History,BA
+17,UW-Madison,Art History,BS
+18,UW-Madison,Asian Languages and Cultures,BA
+19,UW-Madison,Asian Languages and Cultures,BS
+20,UW-Madison,Astronomy–Physics,BA
+21,UW-Madison,Astronomy–Physics,BS
+22,UW-Madison,Atmospheric and Oceanic Sciences,BA
+23,UW-Madison,Atmospheric and Oceanic Sciences,BS
+24,UW-Madison,Biochemistry (CALS),BS
+25,UW-Madison,Biochemistry (L&S),BA
+26,UW-Madison,Biochemistry (L&S),BS
+27,UW-Madison,Biological Systems Engineering,BS
+28,UW-Madison,Biology (CALS),BS
+29,UW-Madison,Biology (L&S),BA
+30,UW-Madison,Biology (L&S),BS
+31,UW-Madison,Biomedical Engineering,BS
+32,UW-Madison,Botany,BA
+33,UW-Madison,Botany,BS
+34,UW-Madison,Business Administration-Human Resources,BBA
+35,UW-Madison,Business Administration-Management,BBA
+36,UW-Madison,Business Administration-Marketing,BBA
+37,UW-Madison,Business: Accounting,BBA
+38,UW-Madison,Business: Actuarial Science,BBA
+39,UW-Madison,Business: Entrepreneurship,BBA
+40,UW-Madison,"Business: Finance, Investment, and Banking",BBA
+41,UW-Madison,Business: Human Resource Management,BBA
+42,UW-Madison,Business: Information Systems,BBA
+43,UW-Madison,Business: International Business,BBA
+44,UW-Madison,Business: Management,BBA
+45,UW-Madison,Business: Management and Human Resources,BBA
+46,UW-Madison,Business: Marketing,BBA
+47,UW-Madison,Business: Operations and Technology Management,BBA
+48,UW-Madison,Business: Real Estate and Urban Land Economics,BBA
+49,UW-Madison,Business: Risk Management and Insurance,BBA
+50,UW-Madison,Business: Supply Chain Management,BBA
+51,UW-Madison,Cartography and Geographic Information Systems,BA
+52,UW-Madison,Cartography and Geographic Information Systems,BS
+53,UW-Madison,Chemical Engineering,BS
+54,UW-Madison,Chemistry,BA
+55,UW-Madison,Chemistry,BS
+56,UW-Madison,Chicanx/e Latinx/e,BA
+57,UW-Madison,Chicanx/e Latinx/e,BS
+58,UW-Madison,Chinese,BA
+59,UW-Madison,Chinese,BS
+60,UW-Madison,Civil Engineering,BS
+61,UW-Madison,Classical Humanities,BA
+62,UW-Madison,Classical Humanities,BS
+63,UW-Madison,Communication Arts,BA
+64,UW-Madison,Communication Arts,BS
+65,UW-Madison,Communication Sciences and Disorders,BA
+66,UW-Madison,Communication Sciences and Disorders,BS
+67,UW-Madison,Communication Sciences and Disorders,BSE
+68,UW-Madison,Community and Environmental Sociology,BS
+69,UW-Madison,Community and Organizational Development,BS
+70,UW-Madison,Computer Engineering,BS
+71,UW-Madison,Computer Sciences,BA
+72,UW-Madison,Computer Sciences,BS
+73,UW-Madison,Conservation Biology,BA
+74,UW-Madison,Conservation Biology,BS
+75,UW-Madison,Consumer Behavior and Marketplace Studies,BS
+76,UW-Madison,Consumer Finance and Financial Planning,BS
+77,UW-Madison,Consumer Marketplace Studies,BS
+78,UW-Madison,Dairy Science,BS
+79,UW-Madison,Dairy and Food Animal Management,BS
+80,UW-Madison,Dance,BFA
+81,UW-Madison,Dance,BS
+82,UW-Madison,Data Science,BA
+83,UW-Madison,Data Science,BS
+84,UW-Madison,"Design, Innovation, and Society",BS
+85,UW-Madison,Economics,BA
+86,UW-Madison,Economics,BS
+87,UW-Madison,Educational Policy Studies,BSE
+88,UW-Madison,Electrical Engineering,BS
+89,UW-Madison,Elementary Education,BSE
+90,UW-Madison,Elementary Education and Special Education,BSE
+91,UW-Madison,Engineering Mechanics,BS
+92,UW-Madison,Engineering Physics,BS
+93,UW-Madison,English,BA
+94,UW-Madison,English,BS
+95,UW-Madison,Entomology,BS
+96,UW-Madison,Environmental Engineering,BS
+97,UW-Madison,Environmental Sciences (CALS),BS
+98,UW-Madison,Environmental Sciences (L&S),BA
+99,UW-Madison,Environmental Sciences (L&S),BS
+100,UW-Madison,Environmental Studies,Second major only
+101,UW-Madison,Food Science,BS
+102,UW-Madison,Forest Science,BS
+103,UW-Madison,French,BA
+104,UW-Madison,French,BS
+105,UW-Madison,Gender and Women’s Studies,BA
+106,UW-Madison,Gender and Women’s Studies,BS
+107,UW-Madison,Genetics and Genomics,BS
+108,UW-Madison,Geography,BA
+109,UW-Madison,Geography,BS
+110,UW-Madison,Geological Engineering,BS
+111,UW-Madison,Geology and Geophysics,BA
+112,UW-Madison,Geology and Geophysics,BS
+113,UW-Madison,German,BA
+114,UW-Madison,German,BS
+115,UW-Madison,Global Health,BS
+116,UW-Madison,Health Promotion and Health Equity,BS
+117,UW-Madison,History,BA
+118,UW-Madison,History,BS
+119,UW-Madison,Horticulture,BS
+120,UW-Madison,Human Development and Family Studies,BS
+121,UW-Madison,Individual Major,BSE
+122,UW-Madison,Individual Major (CALS),BS
+123,UW-Madison,Individual Major (L&S),BA
+124,UW-Madison,Individual Major (L&S),BS
+125,UW-Madison,Individual Major (SOHE),BS
+126,UW-Madison,Industrial Engineering,BS
+127,UW-Madison,Information Science,BA
+128,UW-Madison,Information Science,BS
+129,UW-Madison,Interior Architecture,BS
+130,UW-Madison,International Studies,BA
+131,UW-Madison,International Studies,BS
+132,UW-Madison,Italian,BA
+133,UW-Madison,Italian,BS
+134,UW-Madison,Japanese,BA
+135,UW-Madison,Japanese,BS
+136,UW-Madison,Jewish Studies,BA
+137,UW-Madison,Jewish Studies,BS
+138,UW-Madison,Journalism,JBA
+139,UW-Madison,Journalism,JBS
+140,UW-Madison,Kinesiology,BS
+141,UW-Madison,Landscape Architecture,BLA
+142,UW-Madison,Landscape and Urban Studies,BA
+143,UW-Madison,Landscape and Urban Studies,BS
+144,UW-Madison,"Latin American, Caribbean, and Iberian Studies",BA
+145,UW-Madison,"Latin American, Caribbean, and Iberian Studies",BS
+146,UW-Madison,Legal Studies,BA
+147,UW-Madison,Legal Studies,BS
+148,UW-Madison,Life Sciences Communication,BS
+149,UW-Madison,Linguistics,BA
+150,UW-Madison,Linguistics,BS
+151,UW-Madison,Materials Science and Engineering,BS
+152,UW-Madison,Mathematics,BA
+153,UW-Madison,Mathematics,BS
+154,UW-Madison,Mechanical Engineering,BS
+155,UW-Madison,Microbiology (CALS),BS
+156,UW-Madison,Microbiology (L&S),BA
+157,UW-Madison,Microbiology (L&S),BS
+158,UW-Madison,Molecular and Cell Biology,BA
+159,UW-Madison,Molecular and Cell Biology,BS
+160,UW-Madison,Music,BA
+161,UW-Madison,Music,BS
+162,UW-Madison,"Music: Education, B.M.",BM
+163,UW-Madison,"Music: Performance, B.M.",BM
+164,UW-Madison,"Naval Science, BNS",BNS
+165,UW-Madison,Neurobiology,BA
+166,UW-Madison,Neurobiology,BS
+167,UW-Madison,Nuclear Engineering,BS
+168,UW-Madison,"Nursing, BSN",BSN
+169,UW-Madison,"Nursing, BSN (Accelerated)",BSN
+170,UW-Madison,"Nursing, BSN (Accelerated)",BSN
+171,UW-Madison,Nutritional Sciences,BS
+172,UW-Madison,"Nutritional Sciences, Nutrition, and Dietetics",BS
+173,UW-Madison,Personal Finance,BS
+174,UW-Madison,Pharmaceutical Sciences,BS
+175,UW-Madison,Pharmacology and Toxicology,BS
+176,UW-Madison,Philosophy,BA
+177,UW-Madison,Philosophy,BS
+178,UW-Madison,Physical Education,BS
+179,UW-Madison,Physics,BA
+180,UW-Madison,Physics,BS
+181,UW-Madison,Plant Pathology,BS
+182,UW-Madison,Plant Science and Technology,BS
+183,UW-Madison,Polish,BA
+184,UW-Madison,Polish,BS
+185,UW-Madison,Political Science,BA
+186,UW-Madison,Political Science,BS
+187,UW-Madison,Portuguese,BA
+188,UW-Madison,Portuguese,BS
+189,UW-Madison,Psychology,BA
+190,UW-Madison,Psychology,BS
+191,UW-Madison,Rehabilitation Psychology,BS
+192,UW-Madison,Religious Studies,BA
+193,UW-Madison,Religious Studies,BS
+194,UW-Madison,Russian,BA
+195,UW-Madison,Russian,BS
+196,UW-Madison,Scandinavian Studies,BA
+197,UW-Madison,Scandinavian Studies,BS
+198,UW-Madison,Social Welfare,BA
+199,UW-Madison,Social Welfare,BS
+200,UW-Madison,Social Work,BSW
+201,UW-Madison,Sociology,BA
+202,UW-Madison,Sociology,BS
+203,UW-Madison,Soil Science,BS
+204,UW-Madison,Spanish,BA
+205,UW-Madison,Spanish,BS
+206,UW-Madison,Special Education,BSE
+207,UW-Madison,Statistics,BA
+208,UW-Madison,Statistics,BS
+209,UW-Madison,Textiles and Fashion Design,BS
+210,UW-Madison,Theatre and Drama,BS
+211,UW-Madison,Wildlife Ecology,BS
+212,UW-Madison,Zoology,BA
+213,UW-Madison,Zoology,BS
