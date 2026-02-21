@@ -107,10 +107,6 @@ function Divider() {
   return <div className="h-px w-full bg-gray-200" />;
 }
 
-function SectionHeader({ title }: { title: string }) {
-  return <h2 className="text-sm font-semibold text-gray-900">{title}</h2>;
-}
-
 function AccordionRow({
   title,
   open,
@@ -508,13 +504,6 @@ export default function DegreePlannerFrontend() {
     setIsParsed(true);
   }
 
-  const courseKey = [
-    { icon: <Icon name="check" />, text: "Course is in progress" },
-    { icon: <Icon name="warn" />, text: "Course is waitlisted" },
-    { icon: <Icon name="ban" />, text: "Course is not offered in term" },
-    { icon: <Icon name="slash" />, text: "Course is no longer offered" },
-  ];
-
   function expandAll() {
     const next: Record<string, boolean> = {};
     for (const y of plannerYears) next[y.classYearLabel] = true;
@@ -559,7 +548,7 @@ export default function DegreePlannerFrontend() {
         </div>
       </header>
 
-      <main className="mx-auto grid w-full grid-cols-1 gap-4 px-6 py-4 lg:grid-cols-[320px_minmax(0,1fr)_360px]">
+      <main className="mx-auto grid w-full grid-cols-1 gap-4 px-6 py-4 lg:grid-cols-[320px_minmax(0,1fr)]">
         {/* Left */}
         <aside className="rounded-lg border bg-white p-4">
           <div className="flex items-start justify-between">
@@ -603,24 +592,26 @@ export default function DegreePlannerFrontend() {
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Show Grades</span>
-              <button
-                type="button"
-                onClick={() => setShowGrades((v) => !v)}
-                className={classNames(
-                  "relative h-6 w-11 rounded-full border transition",
-                  showGrades ? "bg-blue-600 border-blue-600" : "bg-gray-200 border-gray-300"
-                )}
-                aria-pressed={showGrades}
-              >
-                <span
-                  className={classNames(
-                    "absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform",
-                    showGrades ? "translate-x-5" : "translate-x-0.5"
-                  )}
-                />
-              </button>
-            </div>
+  <span className="text-sm text-gray-700">Show Grades</span>
+
+  <button
+    type="button"
+    role="switch"
+    aria-checked={showGrades}
+    onClick={() => setShowGrades((v) => !v)}
+    className={classNames(
+      "relative inline-flex h-6 w-11 items-center rounded-full border transition-colors",
+      showGrades ? "bg-blue-600 border-blue-600" : "bg-gray-200 border-gray-300"
+    )}
+  >
+    <span
+      className={classNames(
+        "inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform",
+        showGrades ? "translate-x-5" : "translate-x-0"
+      )}
+    />
+  </button>
+</div>
           </div>
         </aside>
 
@@ -657,40 +648,7 @@ export default function DegreePlannerFrontend() {
           </div>
         </section>
 
-        {/* Right */}
-        <aside className="space-y-4">
-          <div className="rounded-lg border bg-white p-4">
-            <SectionHeader title="Course key" />
-            <div className="mt-3 space-y-3 text-sm text-gray-800">
-              {courseKey.map((k) => (
-                <div key={k.text} className="flex items-center gap-2">
-                  <span className="w-6">{k.icon}</span>
-                  <span>{k.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-lg border bg-white p-4">
-            <SectionHeader title="Menu" />
-            <div className="mt-3 space-y-2">
-              <button className="flex w-full items-center justify-center gap-2 rounded border bg-white px-3 py-2 text-sm font-semibold text-blue-700 hover:bg-gray-50" type="button">
-                <Icon name="pdf" /> CREATE PDF
-              </button>
-              <button className="flex w-full items-center justify-center gap-2 rounded border bg-white px-3 py-2 text-sm font-semibold text-blue-700 hover:bg-gray-50" type="button">
-                <Icon name="plus" /> ADD DEGREE PLAN
-              </button>
-              <button className="flex w-full items-center justify-center gap-2 rounded border bg-white px-3 py-2 text-sm font-semibold text-blue-700 hover:bg-gray-50" type="button">
-                <Icon name="calendar" /> ADD ACADEMIC YEAR
-              </button>
-            </div>
-
-            <div className="mt-5">
-              <SectionHeader title="Saved for later" />
-              <div className="mt-2 rounded-lg border border-dashed p-3 text-sm text-gray-600">Nothing saved yet.</div>
-            </div>
-          </div>
-        </aside>
+        
       </main>
     </div>
   );
