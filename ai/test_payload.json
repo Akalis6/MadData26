@@ -1,0 +1,49 @@
+{
+  "college": "Letters & Science",
+  "degree_type": "BS",
+  "major": "Computer Sciences",
+  "expected_graduation_term": "Spring 2027",
+  "gpa": 3.52,
+  "interests": [
+    "machine learning",
+    "data analytics",
+    "software engineering"
+  ],
+  "courses_taken": [
+    "COMP SCI 200",
+    "COMP SCI 300",
+    "COMP SCI 354",
+    "MATH 221",
+    "MATH 222",
+    "STAT 240",
+    "GEN BUS 306"
+  ],
+  "candidate_programs": [
+    {
+      "name": "Data Science Certificate",
+      "completion_pct": 65,
+      "remaining_courses": [
+        "STAT 340",
+        "COMP SCI 540"
+      ]
+    },
+    {
+      "name": "Digital Studies Certificate",
+      "completion_pct": 45,
+      "remaining_courses": [
+        "LIS 461",
+        "JOURN 601",
+        "COM ARTS 355"
+      ]
+    },
+    {
+      "name": "Math Emphasis in Computer Sciences",
+      "completion_pct": 55,
+      "remaining_courses": [
+        "MATH 234",
+        "MATH 340",
+        "MATH 341"
+      ]
+    }
+  ]
+}
