@@ -1,29 +1,29 @@
 Group ID,Major,Course,Credits Required
 15,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 221,5
 15,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 222,4
-16,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 234,C1
-16,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 375 & MATH 376,C1
-17,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 247,C1
-17,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 207,C1
-17,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 201,C1
-17,"Applied Mathematics, Engineering, and Physics, BS AMEP",E M A 202,C1
+16,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 234,4-10
+16,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 375 & MATH 376,4-10
+17,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 247,3-5
+17,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 207,3-5
+17,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 201,3-5
+17,"Applied Mathematics, Engineering, and Physics, BS AMEP",E M A 202,3-5
 18,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 248,C1
 18,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 208,C1
 18,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 202,C1
-19,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 249,C1
-19,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 241,C1
-19,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 205,C1
-19,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS/E C E  235,C1
-20,"Applied Mathematics, Engineering, and Physics, BS AMEP",CHEM 109,C1
-20,"Applied Mathematics, Engineering, and Physics, BS AMEP",CHEM 103 & CHEM 104,C1
-20,"Applied Mathematics, Engineering, and Physics, BS AMEP",CHEM 115,C1
-21,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 320,C1
-21,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 340,C1
-21,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 341,C1
-21,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 375,C1
-22,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 320,C1
-22,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 319,C1
-22,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 376,C1
+19,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 249,3-4
+19,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 241,3-4
+19,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 205,3-4
+19,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS/E C E  235,3-4
+20,"Applied Mathematics, Engineering, and Physics, BS AMEP",CHEM 109,5-9
+20,"Applied Mathematics, Engineering, and Physics, BS AMEP",CHEM 103 & CHEM 104,5-9
+20,"Applied Mathematics, Engineering, and Physics, BS AMEP",CHEM 115,5-9
+21,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 320,3-5
+21,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 340,3-5
+21,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 341,3-5
+21,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 375,3-5
+22,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 320,1-5
+22,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 319,1-5
+22,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 376,1-5
 23,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 321,3
 32,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 322,3
 24,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH 415,C3
@@ -66,7 +66,7 @@ Group ID,Major,Course,Credits Required
 28,"Applied Mathematics, Engineering, and Physics, BS AMEP",PHYSICS 625,3
 28,"Applied Mathematics, Engineering, and Physics, BS AMEP",E C E 270,3
 28,"Applied Mathematics, Engineering, and Physics, BS AMEP",E M A/M E  307,3
-31,"Applied Mathematics, Engineering, and Physics, BS AMEP",COMP SCI 412,C1
-31,"Applied Mathematics, Engineering, and Physics, BS AMEP",E P/E M A  471,C1
-31,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH/COMP SCI  513,C1
+31,"Applied Mathematics, Engineering, and Physics, BS AMEP",COMP SCI 412,1-3
+31,"Applied Mathematics, Engineering, and Physics, BS AMEP",E P/E M A  471,1-3
+31,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH/COMP SCI  513,1-3
 31,"Applied Mathematics, Engineering, and Physics, BS AMEP",MATH/COMP SCI  514,C1

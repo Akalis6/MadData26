@@ -1,67 +1,67 @@
 Group ID,Major,Course,Credits Required
-682,"Statistics, BA",MATH 221,
-682,"Statistics, BA",MATH 171 & MATH 217,
-683,"Statistics, BA",MATH 222,
-684,"Statistics, BA",MATH 234,
-684,"Statistics, BA",MATH 376,
-685,"Statistics, BA",MATH 340,
-685,"Statistics, BA",MATH 341,
-685,"Statistics, BA",MATH 320,
-685,"Statistics, BA",MATH 375,
-685,"Statistics, BA",MATH 345,
-686,"Statistics, BA",COMP SCI 200,
-686,"Statistics, BA",COMP SCI 220,
-686,"Statistics, BA",COMP SCI 300,
-686,"Statistics, BA",COMP SCI 320,
-686,"Statistics, BA",COMP SCI 400,
-686,"Statistics, BA",COMP SCI 412,
-687,"Statistics, BA",STAT 240,
-687,"Statistics, BA",STAT 301,
-687,"Statistics, BA",STAT 324,
-687,"Statistics, BA",STAT 371,
-687,"Statistics, BA",STAT 303,
-688,"Statistics, BA",STAT 333,
-688,"Statistics, BA",STAT 340,
-688,"Statistics, BA",STAT/M E  424,
-689,"Statistics, BA",STAT/MATH  309,
-689,"Statistics, BA",STAT 311,
-689,"Statistics, BA",STAT/MATH  431,
-689,"Statistics, BA",MATH 531,
-690,"Statistics, BA",STAT/MATH  310,
-691,"Statistics, BA",STAT 304,
-691,"Statistics, BA",STAT 305,
-691,"Statistics, BA",STAT 349,
-691,"Statistics, BA",STAT 351,
-691,"Statistics, BA",STAT 360,
-691,"Statistics, BA",STAT 405,
-691,"Statistics, BA",STAT 411,
-691,"Statistics, BA",STAT 421,
-691,"Statistics, BA",STAT 433,
-691,"Statistics, BA",STAT 443,
-691,"Statistics, BA",STAT 436,
-691,"Statistics, BA",STAT 451,
-691,"Statistics, BA",STAT 453,
-691,"Statistics, BA",STAT 456,
-691,"Statistics, BA",STAT 461,
-691,"Statistics, BA",STAT/COMP SCI  471,
-691,"Statistics, BA",STAT 479,
-691,"Statistics, BA",STAT 575,
-691,"Statistics, BA",STAT/I SY E/MATH/OTM  632,
-691,"Statistics, BA",STAT/B M I  641,
-691,"Statistics, BA",STAT/B M I  642,
-691,"Statistics, BA",STAT 679,
-692,"Statistics, BA",ACT SCI 653,
-692,"Statistics, BA",ACT SCI 654,
-692,"Statistics, BA",COMP SCI/E C E/M E  532,
-692,"Statistics, BA",COMP SCI/E C E  561,
-692,"Statistics, BA",ECON 570,
-692,"Statistics, BA",GEN BUS 656,
-692,"Statistics, BA",GEOG 560,
-692,"Statistics, BA",I SY E 521,
-692,"Statistics, BA",MATH 635,
-692,"Statistics, BA",SOC 362,
-692,"Statistics, BA",SOC 375,
-692,"Statistics, BA",STAT/COMP SCI/MATH  475,
-692,"Statistics, BA",STAT/COMP SCI/I SY E/MATH  525,
-692,"Statistics, BA",STAT/B M I  620,
-692,"Statistics, BA",STAT/B M I  643,
+682,"Statistics, BA",MATH 221,5-10
+682,"Statistics, BA",MATH 171 & MATH 217, 5-10
+683,"Statistics, BA",MATH 222,4
+684,"Statistics, BA",MATH 234,4-5
+684,"Statistics, BA",MATH 376,4-5
+685,"Statistics, BA",MATH 340,3-5
+685,"Statistics, BA",MATH 341,3-5
+685,"Statistics, BA",MATH 320,3-5
+685,"Statistics, BA",MATH 375,3-5
+685,"Statistics, BA",MATH 345,3-5
+686,"Statistics, BA",COMP SCI 200,3-4
+686,"Statistics, BA",COMP SCI 220,3-4
+686,"Statistics, BA",COMP SCI 300,3-4
+686,"Statistics, BA",COMP SCI 320,3-4
+686,"Statistics, BA",COMP SCI 400,3-4
+686,"Statistics, BA",COMP SCI 412,3-4
+687,"Statistics, BA",STAT 240,4-5
+687,"Statistics, BA",STAT 301,4-5
+687,"Statistics, BA",STAT 324,4-5
+687,"Statistics, BA",STAT 371,4-5
+687,"Statistics, BA",STAT 303,4-5
+688,"Statistics, BA",STAT 333,6-7
+688,"Statistics, BA",STAT 340,6-7
+688,"Statistics, BA",STAT/M E  424,6-7
+689,"Statistics, BA",STAT/MATH  309,3
+689,"Statistics, BA",STAT 311,3
+689,"Statistics, BA",STAT/MATH  431,3
+689,"Statistics, BA",MATH 531,3
+690,"Statistics, BA",STAT/MATH  310,3
+691,"Statistics, BA",STAT 304,9-15
+691,"Statistics, BA",STAT 305,9-15
+691,"Statistics, BA",STAT 349,9-15
+691,"Statistics, BA",STAT 351,9-15
+691,"Statistics, BA",STAT 360,9-15
+691,"Statistics, BA",STAT 405,9-15
+691,"Statistics, BA",STAT 411,9-15
+691,"Statistics, BA",STAT 421,9-15
+691,"Statistics, BA",STAT 433,9-15
+691,"Statistics, BA",STAT 443,9-15
+691,"Statistics, BA",STAT 436,9-15
+691,"Statistics, BA",STAT 451,9-15
+691,"Statistics, BA",STAT 453,9-15
+691,"Statistics, BA",STAT 456,9-15
+691,"Statistics, BA",STAT 461,9-15
+691,"Statistics, BA",STAT/COMP SCI  471,9-15
+691,"Statistics, BA",STAT 479,9-15
+691,"Statistics, BA",STAT 575,9-15
+691,"Statistics, BA",STAT/I SY E/MATH/OTM  632,9-15
+691,"Statistics, BA",STAT/B M I  641,9-15
+691,"Statistics, BA",STAT/B M I  642,9-15
+691,"Statistics, BA",STAT 679,9-15
+692,"Statistics, BA",ACT SCI 653,1-6
+692,"Statistics, BA",ACT SCI 654,1-6
+692,"Statistics, BA",COMP SCI/E C E/M E  532,1-6
+692,"Statistics, BA",COMP SCI/E C E  561,1-6
+692,"Statistics, BA",ECON 570,1-6
+692,"Statistics, BA",GEN BUS 656,1-6
+692,"Statistics, BA",GEOG 560,1-6
+692,"Statistics, BA",I SY E 521,1-6
+692,"Statistics, BA",MATH 635,1-6
+692,"Statistics, BA",SOC 362,1-6
+692,"Statistics, BA",SOC 375,1-6
+692,"Statistics, BA",STAT/COMP SCI/MATH  475,1-6
+692,"Statistics, BA",STAT/COMP SCI/I SY E/MATH  525,1-6
+692,"Statistics, BA",STAT/B M I  620,1-6
+692,"Statistics, BA",STAT/B M I  643,1-6

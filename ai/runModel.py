@@ -15,27 +15,34 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODEL_ID = "meta-llama/Llama-3.2-1B-Instruct"
-MAX_NEW_TOKENS = 170
+MAX_NEW_TOKENS = 240
 
 _SYSTEM_PROMPT = (
-    "You are a UW-Madison College of Letters & Science academic and career advisor. "
-    "Use the student context to produce practical recommendations. "
+    "You are a senior UW-Madison College of Letters & Science academic and career advisor. "
+    "Your job is to interpret backend-provided academic feasibility data, not to compute it. "
+    "Treat feasibility_score, completion_pct, estimated_semesters_needed, estimated_graduation_delay, remaining_courses, current_year, and expected_graduation as authoritative inputs. "
+    "Use the provided feasibility_score and academic timeline fields as authoritative. Interpret only the provided data. "
+    "Do NOT compute, infer, invent, or override feasibility metrics. "
+    "Evaluate each candidate program comparatively using: graduation timeline feasibility, estimated semesters required, graduation delay risk, workload implications, sequencing bottlenecks, and career return on investment relative to effort. "
+    "Prioritize recommendations that maximize career benefit while minimizing workload risk and graduation delay. "
+    "In recommended_programs[].why, include concrete feasibility interpretation tied to provided feasibility_score, expected timeline impact, sequencing realism, and ROI-vs-effort tradeoffs. "
+    "In next_steps, provide concrete academic planning actions tied to specific remaining courses, prerequisite sequencing, and semester timing; avoid vague advice. "
+    "Do not give generic statements like 'meet with an advisor', 'update LinkedIn', or 'explore opportunities' unless directly justified by a specific feasibility/timeline risk or sequencing constraint in the provided data. "
     "Return ONLY a valid JSON object with this exact schema: "
     "{"
-    '\"recommended_programs\": ['
-    '{\"name\": string, \"feasibility_score_0_100\": number, \"why\": string}'
+    '"recommended_programs": ['
+    '{"name": string, "feasibility_score_0_100": number, "why": string}'
     "], "
-    '\"career_paths\": [string], '
-    '\"pros\": [string], '
-    '\"cons\": [string], '
-    '\"next_steps\": [string]'
+    '"career_paths": [string], '
+    '"pros": [string], '
+    '"cons": [string], '
+    '"next_steps": [string]'
     "}. "
-    "Do not include markdown, code fences, prose, or any text outside JSON. "
-    "Use backend-provided feasibility_score, completion_pct, estimated_semesters_needed, and estimated_graduation_delay as authoritative inputs. "
-    "Do NOT compute or invent feasibility metrics and do NOT override provided feasibility_score values. "
-    "recommended_programs MUST include at least 1 item if candidate_programs were provided. "
-    "next_steps MUST include at least 3 concrete action items."
+    "Keep output concise: at most 3 recommended_programs, 5 career_paths, 4 pros, 4 cons, and 5 next_steps. "
+    "Keep each string brief (about 8-20 words) so the JSON completes fully within token limits. "
+    "No markdown, no code fences, no extra prose outside the JSON object."
 )
+
 
 _MODEL = None
 _TOKENIZER = None
@@ -68,7 +75,7 @@ def _load_model_once() -> tuple[AutoTokenizer, AutoModelForCausalLM]:
 
         _MODEL = AutoModelForCausalLM.from_pretrained(
             MODEL_ID,
-            dtype=torch.bfloat16,
+            torch_dtype=torch.bfloat16,
             low_cpu_mem_usage=True,
             local_files_only=local_only,
         )
@@ -506,9 +513,54 @@ def generate_json(advising_payload: dict) -> dict:
     output_tokens = generated[0][input_ids.shape[1] :]
     raw_text = tokenizer.decode(output_tokens, skip_special_tokens=True)
     parsed = extract_json(raw_text)
+
     if parsed is None:
-        _debug_raw_output(raw_text)
-        return _enforce_schema({}, advising_payload)
+        retry_messages = [
+            {
+                "role": "system",
+                "content": (
+                    _SYSTEM_PROMPT
+                    + " Retry requirement: output compact JSON only, with short strings, and close all braces/brackets."
+                ),
+            },
+            {
+                "role": "user",
+                "content": (
+                    "Student context JSON:\n"
+                    f"{json.dumps(advising_payload, ensure_ascii=False)}"
+                ),
+            },
+        ]
+        retry_prompt = tokenizer.apply_chat_template(
+            retry_messages,
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+        retry_inputs = tokenizer(retry_prompt, return_tensors="pt")
+        retry_input_ids = retry_inputs["input_ids"].to("cpu")
+        retry_attention_mask = retry_inputs.get("attention_mask")
+        if retry_attention_mask is not None:
+            retry_attention_mask = retry_attention_mask.to("cpu")
+
+        with torch.inference_mode():
+            retry_generated = model.generate(
+                input_ids=retry_input_ids,
+                attention_mask=retry_attention_mask,
+                max_new_tokens=180,
+                do_sample=False,
+                use_cache=True,
+                pad_token_id=tokenizer.pad_token_id,
+                eos_token_id=tokenizer.eos_token_id,
+                temperature=0.0,
+                top_p=1.0,
+            )
+
+        retry_tokens = retry_generated[0][retry_input_ids.shape[1] :]
+        retry_raw_text = tokenizer.decode(retry_tokens, skip_special_tokens=True)
+        parsed = extract_json(retry_raw_text)
+        if parsed is None:
+            _debug_raw_output(retry_raw_text)
+            return _enforce_schema({}, advising_payload)
 
     return _enforce_schema(parsed, advising_payload)
 

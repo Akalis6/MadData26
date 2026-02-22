@@ -1,123 +1,124 @@
 Group ID,Major,Course,Credits Required
-177,"Conservation Biology, BA",BIOLOGY/ZOOLOGY  101,
-177,"Conservation Biology, BA",BIOLOGY/ZOOLOGY  102,
-177,"Conservation Biology, BA",BIOLOGY/BOTANY  130,
-178,"Conservation Biology, BA",BIOLOGY/BOTANY/ZOOLOGY  151,
-178,"Conservation Biology, BA",BIOLOGY/BOTANY/ZOOLOGY  152,
-179,"Conservation Biology, BA",BIOCORE 381,
-179,"Conservation Biology, BA",BIOCORE 382,
-179,"Conservation Biology, BA",BIOCORE 383,
-179,"Conservation Biology, BA",BIOCORE 384,
-179,"Conservation Biology, BA",BIOCORE 485,
-179,"Conservation Biology, BA",BIOCORE 486,
-180,"Conservation Biology, BA",CHEM 103,
-180,"Conservation Biology, BA",CHEM 108,
-180,"Conservation Biology, BA",CHEM 109,
-181,"Conservation Biology, BA",ATM OCN/GEOSCI 105,
-181,"Conservation Biology, BA",ENVIR ST/GEOSCI 106,
-181,"Conservation Biology, BA",ENVIR ST/GEOG  120,
-181,"Conservation Biology, BA",ENVIR ST/GEOG  127,
-181,"Conservation Biology, BA",GEOSCI 100,
-181,"Conservation Biology, BA",GEOSCI 109,
-182,"Conservation Biology, BA",BOTANY/F&W ECOL/ZOOLOGY  460,
-183,"Conservation Biology, BA",GEOSCI 110,
-183,"Conservation Biology, BA",ANTHRO/BOTANY/ZOOLOGY  410,
-184,"Conservation Biology, BA",ENVIR ST/F&W ECOL/ZOOLOGY 360,
-185,"Conservation Biology, BA",STAT 240,
-185,"Conservation Biology, BA",STAT 301,
-185,"Conservation Biology, BA",STAT 371,
-186,"Conservation Biology, BA",AGROECOL 370,
-186,"Conservation Biology, BA",AN SCI/F&W ECOL/ZOOLOGY  520,
-186,"Conservation Biology, BA",AN SCI/F&W ECOL/ZOOLOGY  521,
-186,"Conservation Biology, BA",ANTHRO 391,
-186,"Conservation Biology, BA",ANTHRO 420,
-186,"Conservation Biology, BA",ANTHRO 458,
-186,"Conservation Biology, BA",ANTHRO 668,
-186,"Conservation Biology, BA",BOTANY 330,
-186,"Conservation Biology, BA",BOTANY/PL PATH  332,
-186,"Conservation Biology, BA",BOTANY/PL PATH  333,
-186,"Conservation Biology, BA",BOTANY 400,
-186,"Conservation Biology, BA",BOTANY 401,
-186,"Conservation Biology, BA",BOTANY/F&W ECOL  402,
-186,"Conservation Biology, BA",BOTANY 422,
-186,"Conservation Biology, BA",BOTANY/F&W ECOL  455,
-186,"Conservation Biology, BA",BOTANY/ENTOM/ZOOLOGY  473,
-186,"Conservation Biology, BA",ENTOM/ZOOLOGY  302,
-186,"Conservation Biology, BA",ENTOM 432,
-186,"Conservation Biology, BA",ENVIR ST/ZOOLOGY  315,
-186,"Conservation Biology, BA",ENVIR ST 375,
-186,"Conservation Biology, BA",ENVIR ST/ZOOLOGY  510,
-186,"Conservation Biology, BA",ENVIR ST/ZOOLOGY  511,
-186,"Conservation Biology, BA",F&W ECOL 306,
-186,"Conservation Biology, BA",F&W ECOL 401,
-186,"Conservation Biology, BA",F&W ECOL/SURG SCI  548,
-186,"Conservation Biology, BA",F&W ECOL 655,
-186,"Conservation Biology, BA",GEOSCI/ZOOLOGY  542,
-186,"Conservation Biology, BA",LAND ARC/ENVIR ST  361,
-186,"Conservation Biology, BA",LAND ARC/ENVIR ST  581,
-186,"Conservation Biology, BA",MICROBIO 303,
-186,"Conservation Biology, BA",MICROBIO 304,
-186,"Conservation Biology, BA",M M & I/ENTOM/PATH-BIO/ZOOLOGY  350,
-186,"Conservation Biology, BA",PSYCH 449,
-186,"Conservation Biology, BA",ZOOLOGY 425,
-186,"Conservation Biology, BA",PSYCH 450,
-186,"Conservation Biology, BA",ZOOLOGY 303,
-186,"Conservation Biology, BA",ZOOLOGY 304,
-186,"Conservation Biology, BA",ZOOLOGY 320,
-186,"Conservation Biology, BA",ZOOLOGY/ENVIR ST  315,
-186,"Conservation Biology, BA",ZOOLOGY 316,
-186,"Conservation Biology, BA",ZOOLOGY 430,
-187,"Conservation Biology, BA",A A E 101,
-187,"Conservation Biology, BA",A A E/ENVIR ST  244,
-187,"Conservation Biology, BA",BOTANY/AMER IND/ANTHRO  474,
-187,"Conservation Biology, BA",C&E SOC/SOC  140,
-187,"Conservation Biology, BA",C&E SOC/F&W ECOL/SOC  248,
-187,"Conservation Biology, BA",ECON 101,
-187,"Conservation Biology, BA",ENVIR ST/GEOG  139,
-187,"Conservation Biology, BA",ENVIR ST/AMER IND  306,
-187,"Conservation Biology, BA",ENVIR ST 308,
-187,"Conservation Biology, BA",ENVIR ST/GEOG  339,
-187,"Conservation Biology, BA",ENVIR ST/PHILOS  441,
-187,"Conservation Biology, BA",ENVIR ST/GEOG/HISTORY  460,
-187,"Conservation Biology, BA",GEOG 344,
-187,"Conservation Biology, BA",GEOG 359,
-187,"Conservation Biology, BA",GEOG 538,
-187,"Conservation Biology, BA",LAND ARC 363,
-188,"Conservation Biology, BA",ANTHRO 405,
-188,"Conservation Biology, BA",ATM OCN 100,
-188,"Conservation Biology, BA",BOTANY/PL PATH  123,
-188,"Conservation Biology, BA",BOTANY/ENVIR ST/ZOOLOGY  260,
-188,"Conservation Biology, BA",BOTANY 300,
-188,"Conservation Biology, BA",BOTANY 305,
-188,"Conservation Biology, BA",BOTANY/ZOOLOGY  450,
-188,"Conservation Biology, BA",ENTOM/ENVIR ST  201,
-188,"Conservation Biology, BA",ENTOM/ZOOLOGY  540,
-188,"Conservation Biology, BA",ENTOM 699,
-188,"Conservation Biology, BA",ENVIR ST/ILS  126,
-188,"Conservation Biology, BA",ENVIR ST/GEOG/SOIL SCI  230,
-188,"Conservation Biology, BA",ENVIR ST 307,
-188,"Conservation Biology, BA",ENVIR ST/SOIL SCI  324,
-188,"Conservation Biology, BA",ENVIR ST/CIV ENGR/GEOG  377,
-188,"Conservation Biology, BA",ENVIR ST/POP HLTH  471,
-188,"Conservation Biology, BA",ENVIR ST/F&W ECOL  515,
-188,"Conservation Biology, BA",ENVIR ST/GEOG  537,
-188,"Conservation Biology, BA",ENVIR ST/SOIL SCI  575,
-188,"Conservation Biology, BA",F&W ECOL/ZOOLOGY  335,
-188,"Conservation Biology, BA",F&W ECOL 375,
-188,"Conservation Biology, BA",F&W ECOL 395,
-188,"Conservation Biology, BA",F&W ECOL 561,
-188,"Conservation Biology, BA",F&W ECOL/LAND ARC/ZOOLOGY  565,
-188,"Conservation Biology, BA",F&W ECOL 699,
-188,"Conservation Biology, BA",GENETICS 466,
-188,"Conservation Biology, BA",GENETICS 467,
-188,"Conservation Biology, BA",GENETICS 527,
-188,"Conservation Biology, BA",GEOG/GEOSCI  420,
-188,"Conservation Biology, BA",LAND ARC 211,
-188,"Conservation Biology, BA",MICROBIO 101,
-188,"Conservation Biology, BA",MICROBIO 102,
-188,"Conservation Biology, BA",PL PATH 300,
-188,"Conservation Biology, BA",PL PATH 315,
-188,"Conservation Biology, BA",PLANTSCI 376,
-188,"Conservation Biology, BA",SOIL SCI 301,
-188,"Conservation Biology, BA",ZOOLOGY 405,
-189,"Conservation Biology, BA",BOTANY/ENVIR ST/F&W ECOL/ZOOLOGY 516,
+177,"Conservation Biology, BA",BIOLOGY/ZOOLOGY  101,C3
+177,"Conservation Biology, BA",BIOLOGY/ZOOLOGY  102,C3
+177,"Conservation Biology, BA",BIOLOGY/BOTANY  130,C3
+178,"Conservation Biology, BA",BIOLOGY/BOTANY/ZOOLOGY  151,C2
+178,"Conservation Biology, BA",BIOLOGY/BOTANY/ZOOLOGY  152,C2
+179,"Conservation Biology, BA",BIOCORE 381,10
+179,"Conservation Biology, BA",BIOCORE 382,10
+179,"Conservation Biology, BA",BIOCORE 383,10
+179,"Conservation Biology, BA",BIOCORE 384,10
+179,"Conservation Biology, BA",BIOCORE 485,10
+179,"Conservation Biology, BA",BIOCORE 486,10
+180,"Conservation Biology, BA",CHEM 103,C1
+180,"Conservation Biology, BA",CHEM 108,C1
+180,"Conservation Biology, BA",CHEM 109,C1
+181,"Conservation Biology, BA",ATM OCN/GEOSCI 105,C1
+181,"Conservation Biology, BA",ENVIR ST/GEOSCI 106,C1
+181,"Conservation Biology, BA",ENVIR ST/GEOG  120,C1
+181,"Conservation Biology, BA",ENVIR ST/GEOG  127,C1
+181,"Conservation Biology, BA",GEOSCI 100,C1
+181,"Conservation Biology, BA",GEOSCI 109,C1
+182,"Conservation Biology, BA",BOTANY/F&W ECOL/ZOOLOGY  460,C2
+182,"Conservation Biology, BA",GEOSCI 110,C2
+182,"Conservation Biology, BA",ANTHRO/BOTANY/ZOOLOGY  410,C2
+182,"Conservation Biology, BA",ENVIR ST/F&W ECOL/ZOOLOGY 360,C2
+185,"Conservation Biology, BA",STAT 240,C1
+185,"Conservation Biology, BA",STAT 301,C1
+185,"Conservation Biology, BA",STAT 371,C1
+186,"Conservation Biology, BA",AGROECOL 370,12
+186,"Conservation Biology, BA",AN SCI/F&W ECOL/ZOOLOGY  520,12
+186,"Conservation Biology, BA",AN SCI/F&W ECOL/ZOOLOGY  521,12
+186,"Conservation Biology, BA",ANTHRO 391,12
+186,"Conservation Biology, BA",ANTHRO 420,12
+186,"Conservation Biology, BA",ANTHRO 458,12
+186,"Conservation Biology, BA",ANTHRO 668,12
+186,"Conservation Biology, BA",BOTANY 330,12
+186,"Conservation Biology, BA",BOTANY/PL PATH  332,12
+186,"Conservation Biology, BA",BOTANY/PL PATH  333,12
+186,"Conservation Biology, BA",BOTANY 400,12
+186,"Conservation Biology, BA",BOTANY 401,12
+186,"Conservation Biology, BA",BOTANY/F&W ECOL  402,12
+186,"Conservation Biology, BA",BOTANY 422,12
+186,"Conservation Biology, BA",BOTANY/F&W ECOL  455,12
+186,"Conservation Biology, BA",BOTANY/ENTOM/ZOOLOGY  473,12
+186,"Conservation Biology, BA",ENTOM/ZOOLOGY  302,12
+186,"Conservation Biology, BA",ENTOM 432,12
+186,"Conservation Biology, BA",ENVIR ST/ZOOLOGY  315,12
+186,"Conservation Biology, BA",ENVIR ST 375,12
+186,"Conservation Biology, BA",ENVIR ST/ZOOLOGY  510,12
+186,"Conservation Biology, BA",ENVIR ST/ZOOLOGY  511,12
+186,"Conservation Biology, BA",F&W ECOL 306,12
+186,"Conservation Biology, BA",F&W ECOL 401,12
+186,"Conservation Biology, BA",F&W ECOL/SURG SCI  548,12
+186,"Conservation Biology, BA",F&W ECOL 655,12
+186,"Conservation Biology, BA",GEOSCI/ZOOLOGY  542,12
+186,"Conservation Biology, BA",LAND ARC/ENVIR ST  361,12
+186,"Conservation Biology, BA",LAND ARC/ENVIR ST  581,12
+186,"Conservation Biology, BA",MICROBIO 303,12
+186,"Conservation Biology, BA",MICROBIO 304,12
+186,"Conservation Biology, BA",M M & I/ENTOM/PATH-BIO/ZOOLOGY  350,12
+186,"Conservation Biology, BA",PSYCH 449,12
+186,"Conservation Biology, BA",ZOOLOGY 425,12
+186,"Conservation Biology, BA",PSYCH 450,12
+186,"Conservation Biology, BA",ZOOLOGY 303,12
+186,"Conservation Biology, BA",ZOOLOGY 304,12
+186,"Conservation Biology, BA",ZOOLOGY 320,12
+186,"Conservation Biology, BA",ZOOLOGY/ENVIR ST  315,12
+186,"Conservation Biology, BA",ZOOLOGY 316,12
+186,"Conservation Biology, BA",ZOOLOGY 430,12
+5,"Conversation Biology, BA", BOTANY/ENVIR ST/F&W ECOL/ZOOLOGY 516, C1
+187,"Conservation Biology, BA",A A E 101,3
+187,"Conservation Biology, BA",A A E/ENVIR ST  244,3
+187,"Conservation Biology, BA",BOTANY/AMER IND/ANTHRO  474,3
+187,"Conservation Biology, BA",C&E SOC/SOC  140,3
+187,"Conservation Biology, BA",C&E SOC/F&W ECOL/SOC  248,3
+187,"Conservation Biology, BA",ECON 101,3
+187,"Conservation Biology, BA",ENVIR ST/GEOG  139,3
+187,"Conservation Biology, BA",ENVIR ST/AMER IND  306,3
+187,"Conservation Biology, BA",ENVIR ST 308,3
+187,"Conservation Biology, BA",ENVIR ST/GEOG  339,3
+187,"Conservation Biology, BA",ENVIR ST/PHILOS  441,3
+187,"Conservation Biology, BA",ENVIR ST/GEOG/HISTORY  460,3
+187,"Conservation Biology, BA",GEOG 344,3
+187,"Conservation Biology, BA",GEOG 359,3
+187,"Conservation Biology, BA",GEOG 538,3
+187,"Conservation Biology, BA",LAND ARC 363,3
+188,"Conservation Biology, BA",ANTHRO 405,C3
+188,"Conservation Biology, BA",ATM OCN 100,C3
+188,"Conservation Biology, BA",BOTANY/PL PATH  123,C3
+188,"Conservation Biology, BA",BOTANY/ENVIR ST/ZOOLOGY  260,C3
+188,"Conservation Biology, BA",BOTANY 300,C3
+188,"Conservation Biology, BA",BOTANY 305,C3
+188,"Conservation Biology, BA",BOTANY/ZOOLOGY  450,C3
+188,"Conservation Biology, BA",ENTOM/ENVIR ST  201,C3
+188,"Conservation Biology, BA",ENTOM/ZOOLOGY  540,C3
+188,"Conservation Biology, BA",ENTOM 699,C3
+188,"Conservation Biology, BA",ENVIR ST/ILS  126,C3
+188,"Conservation Biology, BA",ENVIR ST/GEOG/SOIL SCI  230,C3
+188,"Conservation Biology, BA",ENVIR ST 307,C3
+188,"Conservation Biology, BA",ENVIR ST/SOIL SCI  324,C3
+188,"Conservation Biology, BA",ENVIR ST/CIV ENGR/GEOG  377,C3
+188,"Conservation Biology, BA",ENVIR ST/POP HLTH  471,C3
+188,"Conservation Biology, BA",ENVIR ST/F&W ECOL  515,C3
+188,"Conservation Biology, BA",ENVIR ST/GEOG  537,C3
+188,"Conservation Biology, BA",ENVIR ST/SOIL SCI  575,C3
+188,"Conservation Biology, BA",F&W ECOL/ZOOLOGY  335,C3
+188,"Conservation Biology, BA",F&W ECOL 375,C3
+188,"Conservation Biology, BA",F&W ECOL 395,C3
+188,"Conservation Biology, BA",F&W ECOL 561,C3
+188,"Conservation Biology, BA",F&W ECOL/LAND ARC/ZOOLOGY  565,C3
+188,"Conservation Biology, BA",F&W ECOL 699,C3
+188,"Conservation Biology, BA",GENETICS 466,C3
+188,"Conservation Biology, BA",GENETICS 467,C3
+188,"Conservation Biology, BA",GENETICS 527,C3
+188,"Conservation Biology, BA",GEOG/GEOSCI  420,C3
+188,"Conservation Biology, BA",LAND ARC 211,C3
+188,"Conservation Biology, BA",MICROBIO 101,C3
+188,"Conservation Biology, BA",MICROBIO 102,C3
+188,"Conservation Biology, BA",PL PATH 300,C3
+188,"Conservation Biology, BA",PL PATH 315,C3
+188,"Conservation Biology, BA",PLANTSCI 376,C3
+188,"Conservation Biology, BA",SOIL SCI 301,C3
+188,"Conservation Biology, BA",ZOOLOGY 405,C3
+189,"Conservation Biology, BA",BOTANY/ENVIR ST/F&W ECOL/ZOOLOGY 516,C3

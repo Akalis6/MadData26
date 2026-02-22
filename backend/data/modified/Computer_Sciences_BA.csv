@@ -1,92 +1,92 @@
 Group ID,Major,Course,Credits Required
-169,"Computer Sciences, BA",COMP SCI/MATH  240,
-169,"Computer Sciences, BA",COMP SCI/E C E  252,
-169,"Computer Sciences, BA",COMP SCI 300,
-169,"Computer Sciences, BA",COMP SCI/E C E  354,
-169,"Computer Sciences, BA",COMP SCI 400,
-170,"Computer Sciences, BA",MATH 221 & MATH 222,
-170,"Computer Sciences, BA",MATH 171 & MATH 217 & MATH 222,
-171,"Computer Sciences, BA",MATH 320,
-171,"Computer Sciences, BA",MATH 340,
-171,"Computer Sciences, BA",MATH 345,
-171,"Computer Sciences, BA",MATH 341,
-171,"Computer Sciences, BA",MATH 375,
-172,"Computer Sciences, BA",STAT/MATH  309,
-172,"Computer Sciences, BA",STAT 311,
-172,"Computer Sciences, BA",STAT 324,
-172,"Computer Sciences, BA",MATH 331,
-172,"Computer Sciences, BA",STAT 333,
-172,"Computer Sciences, BA",STAT 340,
-172,"Computer Sciences, BA",STAT 371,
-172,"Computer Sciences, BA",STAT/MATH  431,
-172,"Computer Sciences, BA",MATH 531,
-173,"Computer Sciences, BA",COMP SCI 577,
-173,"Computer Sciences, BA",COMP SCI 520,
-174,"Computer Sciences, BA",COMP SCI 407,
-174,"Computer Sciences, BA",COMP SCI/E C E  506,
-174,"Computer Sciences, BA",COMP SCI 536,
-174,"Computer Sciences, BA",COMP SCI 538,
-174,"Computer Sciences, BA",COMP SCI 537,
-174,"Computer Sciences, BA",COMP SCI 542,
-174,"Computer Sciences, BA",COMP SCI 544,
-174,"Computer Sciences, BA",COMP SCI/E C E  552,
-174,"Computer Sciences, BA",COMP SCI 557,
-174,"Computer Sciences, BA",COMP SCI 564,
-174,"Computer Sciences, BA",COMP SCI 640,
-174,"Computer Sciences, BA",COMP SCI 642,
-175,"Computer Sciences, BA",COMP SCI 412,
-175,"Computer Sciences, BA",COMP SCI/I SY E/MATH  425,
-175,"Computer Sciences, BA",COMP SCI/MATH  513,
-175,"Computer Sciences, BA",COMP SCI/MATH  514,
-175,"Computer Sciences, BA",COMP SCI/E C E/I SY E  524,
-175,"Computer Sciences, BA",COMP SCI/I SY E/MATH/STAT  525,
-175,"Computer Sciences, BA",COMP SCI 534,
-175,"Computer Sciences, BA",COMP SCI 540,
-175,"Computer Sciences, BA",COMP SCI 541,
-175,"Computer Sciences, BA",COMP SCI 559,
-175,"Computer Sciences, BA",COMP SCI 565,
-175,"Computer Sciences, BA",COMP SCI 566,
-175,"Computer Sciences, BA",COMP SCI 570,
-175,"Computer Sciences, BA",COMP SCI 571,
-176,"Computer Sciences, BA",COMP SCI 407,
-176,"Computer Sciences, BA",COMP SCI 412,
-176,"Computer Sciences, BA",COMP SCI/I SY E/MATH  425,
-176,"Computer Sciences, BA",COMP SCI/E C E/MATH  435,
-176,"Computer Sciences, BA",COMP SCI/STAT  471,
-176,"Computer Sciences, BA",COMP SCI/MATH/STAT  475,
-176,"Computer Sciences, BA",COMP SCI/E C E  506,
-176,"Computer Sciences, BA",COMP SCI/MATH  513,
-176,"Computer Sciences, BA",COMP SCI/MATH  514,
-176,"Computer Sciences, BA",COMP SCI/DS/I SY E  518,
-176,"Computer Sciences, BA",COMP SCI 520,
-176,"Computer Sciences, BA",COMP SCI/E C E/I SY E  524,
-176,"Computer Sciences, BA",COMP SCI/I SY E/MATH/STAT  525,
-176,"Computer Sciences, BA",COMP SCI/I SY E  526,
-176,"Computer Sciences, BA",COMP SCI/E C E/M E  532,
-176,"Computer Sciences, BA",COMP SCI/E C E  533,
-176,"Computer Sciences, BA",COMP SCI 534,
-176,"Computer Sciences, BA",COMP SCI 536,
-176,"Computer Sciences, BA",COMP SCI 537,
-176,"Computer Sciences, BA",COMP SCI 538,
-176,"Computer Sciences, BA",COMP SCI/E C E/M E  539,
-176,"Computer Sciences, BA",COMP SCI 540,
-176,"Computer Sciences, BA",COMP SCI 541,
-176,"Computer Sciences, BA",COMP SCI 542,
-176,"Computer Sciences, BA",COMP SCI 544,
-176,"Computer Sciences, BA",COMP SCI/E C E  552,
-176,"Computer Sciences, BA",COMP SCI 557,
-176,"Computer Sciences, BA",COMP SCI 559,
-176,"Computer Sciences, BA",COMP SCI/E C E  561,
-176,"Computer Sciences, BA",COMP SCI 564,
-176,"Computer Sciences, BA",COMP SCI 565,
-176,"Computer Sciences, BA",COMP SCI 566,
-176,"Computer Sciences, BA",COMP SCI/B M I  567,
-176,"Computer Sciences, BA",COMP SCI 570,
-176,"Computer Sciences, BA",COMP SCI 571,
-176,"Computer Sciences, BA",COMP SCI/B M I  576,
-176,"Computer Sciences, BA",COMP SCI 577,
-176,"Computer Sciences, BA",COMP SCI/DS  579,
-176,"Computer Sciences, BA",COMP SCI 620,
-176,"Computer Sciences, BA",COMP SCI 640,
-176,"Computer Sciences, BA",COMP SCI 642,
-176,"Computer Sciences, BA",COMP SCI 639,
+169,"Computer Sciences, BA",COMP SCI/MATH  240,15
+169,"Computer Sciences, BA",COMP SCI/E C E  252,15
+169,"Computer Sciences, BA",COMP SCI 300,15
+169,"Computer Sciences, BA",COMP SCI/E C E  354,15
+169,"Computer Sciences, BA",COMP SCI 400,15
+170,"Computer Sciences, BA",MATH 221 & MATH 222,C1
+170,"Computer Sciences, BA",MATH 171 & MATH 217 & MATH 222,C1
+171,"Computer Sciences, BA",MATH 320,C1
+171,"Computer Sciences, BA",MATH 340,C1
+171,"Computer Sciences, BA",MATH 345,C1
+171,"Computer Sciences, BA",MATH 341,C1
+171,"Computer Sciences, BA",MATH 375,C1
+172,"Computer Sciences, BA",STAT/MATH  309,C1
+172,"Computer Sciences, BA",STAT 311,C1
+172,"Computer Sciences, BA",STAT 324,C1
+172,"Computer Sciences, BA",MATH 331,C1
+172,"Computer Sciences, BA",STAT 333,C1
+172,"Computer Sciences, BA",STAT 340,C1
+172,"Computer Sciences, BA",STAT 371,C1
+172,"Computer Sciences, BA",STAT/MATH  431,C1
+172,"Computer Sciences, BA",MATH 531,C1
+173,"Computer Sciences, BA",COMP SCI 577,C1
+173,"Computer Sciences, BA",COMP SCI 520,C1
+174,"Computer Sciences, BA",COMP SCI 407,C2
+174,"Computer Sciences, BA",COMP SCI/E C E  506,C2
+174,"Computer Sciences, BA",COMP SCI 536,C2
+174,"Computer Sciences, BA",COMP SCI 538,C2
+174,"Computer Sciences, BA",COMP SCI 537,C2
+174,"Computer Sciences, BA",COMP SCI 542,C2
+174,"Computer Sciences, BA",COMP SCI 544,C2
+174,"Computer Sciences, BA",COMP SCI/E C E  552,C2
+174,"Computer Sciences, BA",COMP SCI 557,C2
+174,"Computer Sciences, BA",COMP SCI 564,C2
+174,"Computer Sciences, BA",COMP SCI 640,C2
+174,"Computer Sciences, BA",COMP SCI 642,C2
+175,"Computer Sciences, BA",COMP SCI 412,C1
+175,"Computer Sciences, BA",COMP SCI/I SY E/MATH  425,C1
+175,"Computer Sciences, BA",COMP SCI/MATH  513,C1
+175,"Computer Sciences, BA",COMP SCI/MATH  514,C1
+175,"Computer Sciences, BA",COMP SCI/E C E/I SY E  524,C1
+175,"Computer Sciences, BA",COMP SCI/I SY E/MATH/STAT  525,C1
+175,"Computer Sciences, BA",COMP SCI 534,C1
+175,"Computer Sciences, BA",COMP SCI 540,C1
+175,"Computer Sciences, BA",COMP SCI 541,C1
+175,"Computer Sciences, BA",COMP SCI 559,C1
+175,"Computer Sciences, BA",COMP SCI 565,C1
+175,"Computer Sciences, BA",COMP SCI 566,C1
+175,"Computer Sciences, BA",COMP SCI 570,C1
+175,"Computer Sciences, BA",COMP SCI 571,C1
+176,"Computer Sciences, BA",COMP SCI 407,C2
+176,"Computer Sciences, BA",COMP SCI 412,C2
+176,"Computer Sciences, BA",COMP SCI/I SY E/MATH  425,C2
+176,"Computer Sciences, BA",COMP SCI/E C E/MATH  435,C2
+176,"Computer Sciences, BA",COMP SCI/STAT  471,C2
+176,"Computer Sciences, BA",COMP SCI/MATH/STAT  475,C2
+176,"Computer Sciences, BA",COMP SCI/E C E  506,C2
+176,"Computer Sciences, BA",COMP SCI/MATH  513,C2
+176,"Computer Sciences, BA",COMP SCI/MATH  514,C2
+176,"Computer Sciences, BA",COMP SCI/DS/I SY E  518,C2
+176,"Computer Sciences, BA",COMP SCI 520,C2
+176,"Computer Sciences, BA",COMP SCI/E C E/I SY E  524,C2
+176,"Computer Sciences, BA",COMP SCI/I SY E/MATH/STAT  525,C2
+176,"Computer Sciences, BA",COMP SCI/I SY E  526,C2
+176,"Computer Sciences, BA",COMP SCI/E C E/M E  532,C2
+176,"Computer Sciences, BA",COMP SCI/E C E  533,C2
+176,"Computer Sciences, BA",COMP SCI 534,C2
+176,"Computer Sciences, BA",COMP SCI 536,C2
+176,"Computer Sciences, BA",COMP SCI 537,C2
+176,"Computer Sciences, BA",COMP SCI 538,C2
+176,"Computer Sciences, BA",COMP SCI/E C E/M E  539,C2
+176,"Computer Sciences, BA",COMP SCI 540,C2
+176,"Computer Sciences, BA",COMP SCI 541,C2
+176,"Computer Sciences, BA",COMP SCI 542,C2
+176,"Computer Sciences, BA",COMP SCI 544,C2
+176,"Computer Sciences, BA",COMP SCI/E C E  552,C2
+176,"Computer Sciences, BA",COMP SCI 557,C2
+176,"Computer Sciences, BA",COMP SCI 559,C2
+176,"Computer Sciences, BA",COMP SCI/E C E  561,C2
+176,"Computer Sciences, BA",COMP SCI 564,C2
+176,"Computer Sciences, BA",COMP SCI 565,C2
+176,"Computer Sciences, BA",COMP SCI 566,C2
+176,"Computer Sciences, BA",COMP SCI/B M I  567,C2
+176,"Computer Sciences, BA",COMP SCI 570,C2
+176,"Computer Sciences, BA",COMP SCI 571,C2
+176,"Computer Sciences, BA",COMP SCI/B M I  576,C2
+176,"Computer Sciences, BA",COMP SCI 577,C2
+176,"Computer Sciences, BA",COMP SCI/DS  579,C2
+176,"Computer Sciences, BA",COMP SCI 620,C2
+176,"Computer Sciences, BA",COMP SCI 640,C2
+176,"Computer Sciences, BA",COMP SCI 642,C2
+176,"Computer Sciences, BA",COMP SCI 639,C2

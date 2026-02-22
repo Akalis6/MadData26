@@ -1,95 +1,95 @@
 Group ID,Major,Course,Credits Required
-468,"Mathematics, BA",MATH 341,
-468,"Mathematics, BA",MATH 320,
-468,"Mathematics, BA",MATH 340,
-468,"Mathematics, BA",MATH 375,
-469,"Mathematics, BA",MATH 521,
-469,"Mathematics, BA",MATH 541,
-469,"Mathematics, BA",MATH 551,
-470,"Mathematics, BA",MATH/COMP SCI  513,
-470,"Mathematics, BA",MATH/COMP SCI  514,
-470,"Mathematics, BA",MATH 519,
-470,"Mathematics, BA",MATH 521,
-470,"Mathematics, BA",MATH 522,
-470,"Mathematics, BA",MATH/COMP SCI/I SY E/STAT  525,
-470,"Mathematics, BA",MATH 531,
-470,"Mathematics, BA",MATH 535,
-470,"Mathematics, BA",MATH 540,
-470,"Mathematics, BA",MATH 541,
-470,"Mathematics, BA",MATH 542,
-470,"Mathematics, BA",MATH 551,
-470,"Mathematics, BA",MATH 552,
-470,"Mathematics, BA",MATH 561,
-470,"Mathematics, BA",MATH 567,
-470,"Mathematics, BA",MATH 570,
-470,"Mathematics, BA",MATH/PHILOS  571,
-470,"Mathematics, BA",MATH 607,
-470,"Mathematics, BA",MATH/B M I/BIOCHEM/BMOLCHEM  609,
-470,"Mathematics, BA",MATH 616,
-470,"Mathematics, BA",MATH 619,
-470,"Mathematics, BA",MATH 621,
-470,"Mathematics, BA",MATH 623,
-470,"Mathematics, BA",MATH 627,
-470,"Mathematics, BA",MATH 629,
-470,"Mathematics, BA",MATH/I SY E/OTM/STAT  632,
-470,"Mathematics, BA",MATH 635,
-470,"Mathematics, BA",MATH 681,
-470,"Mathematics, BA",MATH 682,
-470,"Mathematics, BA",MATH 691,
-470,"Mathematics, BA",MATH 692,
-470,"Mathematics, BA",MATH 698,
-470,"Mathematics, BA",MATH 699,
-471,"Mathematics, BA",MATH/STAT  431,
-471,"Mathematics, BA",MATH/STAT  309,
-471,"Mathematics, BA",MATH/STAT  310,
-471,"Mathematics, BA",MATH 319,
-471,"Mathematics, BA",MATH 376,
-471,"Mathematics, BA",MATH 321,
-471,"Mathematics, BA",MATH 322,
-471,"Mathematics, BA",MATH 390,
-471,"Mathematics, BA",MATH 407,
-471,"Mathematics, BA",MATH 415,
-471,"Mathematics, BA",MATH 421,
-471,"Mathematics, BA",MATH/COMP SCI/I SY E  425,
-471,"Mathematics, BA",MATH/COMP SCI/E C E  435,
-471,"Mathematics, BA",MATH 443,
-471,"Mathematics, BA",MATH 444,
-471,"Mathematics, BA",MATH 461,
-471,"Mathematics, BA",MATH 467,
-471,"Mathematics, BA",MATH/HIST SCI  473,
-471,"Mathematics, BA",MATH/COMP SCI/STAT  475,
-471,"Mathematics, BA",MATH 490,
-471,"Mathematics, BA",MATH 491,
-471,"Mathematics, BA",MATH/COMP SCI  513,
-471,"Mathematics, BA",MATH/COMP SCI  514,
-471,"Mathematics, BA",MATH 519,
-471,"Mathematics, BA",MATH 521,
-471,"Mathematics, BA",MATH 522,
-471,"Mathematics, BA",MATH/COMP SCI/I SY E/STAT  525,
-471,"Mathematics, BA",MATH 531,
-471,"Mathematics, BA",MATH 535,
-471,"Mathematics, BA",MATH 540,
-471,"Mathematics, BA",MATH 541,
-471,"Mathematics, BA",MATH 542,
-471,"Mathematics, BA",MATH 551,
-471,"Mathematics, BA",MATH 552,
-471,"Mathematics, BA",MATH 561,
-471,"Mathematics, BA",MATH 567,
-471,"Mathematics, BA",MATH 570,
-471,"Mathematics, BA",MATH/PHILOS  571,
-471,"Mathematics, BA",MATH 607,
-471,"Mathematics, BA",MATH/B M I/BIOCHEM/BMOLCHEM  609,
-471,"Mathematics, BA",MATH 616,
-471,"Mathematics, BA",MATH 619,
-471,"Mathematics, BA",MATH 621,
-471,"Mathematics, BA",MATH 623,
-471,"Mathematics, BA",MATH 627,
-471,"Mathematics, BA",MATH 629,
-471,"Mathematics, BA",MATH/I SY E/OTM/STAT  632,
-471,"Mathematics, BA",MATH 635,
-471,"Mathematics, BA",MATH 681,
-471,"Mathematics, BA",MATH 682,
-471,"Mathematics, BA",MATH 691,
-471,"Mathematics, BA",MATH 692,
-471,"Mathematics, BA",MATH 698,
-471,"Mathematics, BA",MATH 699,
+468,"Mathematics, BA",MATH 341,C1
+468,"Mathematics, BA",MATH 320,C1
+468,"Mathematics, BA",MATH 340,C1
+468,"Mathematics, BA",MATH 375,C1
+469,"Mathematics, BA",MATH 521,C2
+469,"Mathematics, BA",MATH 541,C2
+469,"Mathematics, BA",MATH 551,C2
+470,"Mathematics, BA",MATH/COMP SCI  513,C1
+470,"Mathematics, BA",MATH/COMP SCI  514,C1
+470,"Mathematics, BA",MATH 519,C1
+470,"Mathematics, BA",MATH 521,C1
+470,"Mathematics, BA",MATH 522,C1
+470,"Mathematics, BA",MATH/COMP SCI/I SY E/STAT  525,C1
+470,"Mathematics, BA",MATH 531,C1
+470,"Mathematics, BA",MATH 535,C1
+470,"Mathematics, BA",MATH 540,C1
+470,"Mathematics, BA",MATH 541,C1
+470,"Mathematics, BA",MATH 542,C1
+470,"Mathematics, BA",MATH 551,C1
+470,"Mathematics, BA",MATH 552,C1
+470,"Mathematics, BA",MATH 561,C1
+470,"Mathematics, BA",MATH 567,C1
+470,"Mathematics, BA",MATH 570,C1
+470,"Mathematics, BA",MATH/PHILOS  571,C1
+470,"Mathematics, BA",MATH 607,C1
+470,"Mathematics, BA",MATH/B M I/BIOCHEM/BMOLCHEM  609,C1
+470,"Mathematics, BA",MATH 616,C1
+470,"Mathematics, BA",MATH 619,C1
+470,"Mathematics, BA",MATH 621,C1
+470,"Mathematics, BA",MATH 623,C1
+470,"Mathematics, BA",MATH 627,C1
+470,"Mathematics, BA",MATH 629,C1
+470,"Mathematics, BA",MATH/I SY E/OTM/STAT  632,C1
+470,"Mathematics, BA",MATH 635,C1
+470,"Mathematics, BA",MATH 681,C1
+470,"Mathematics, BA",MATH 682,C1
+470,"Mathematics, BA",MATH 691,C1
+470,"Mathematics, BA",MATH 692,C1
+470,"Mathematics, BA",MATH 698,C1
+470,"Mathematics, BA",MATH 699,C1
+471,"Mathematics, BA",MATH/STAT  431,9
+471,"Mathematics, BA",MATH/STAT  309,9
+471,"Mathematics, BA",MATH/STAT  310,9
+471,"Mathematics, BA",MATH 319,9
+471,"Mathematics, BA",MATH 376,9
+471,"Mathematics, BA",MATH 321,9
+471,"Mathematics, BA",MATH 322,9
+471,"Mathematics, BA",MATH 390,9
+471,"Mathematics, BA",MATH 407,9
+471,"Mathematics, BA",MATH 415,9
+471,"Mathematics, BA",MATH 421,9
+471,"Mathematics, BA",MATH/COMP SCI/I SY E  425,9
+471,"Mathematics, BA",MATH/COMP SCI/E C E  435,9
+471,"Mathematics, BA",MATH 443,9
+471,"Mathematics, BA",MATH 444,9
+471,"Mathematics, BA",MATH 461,9
+471,"Mathematics, BA",MATH 467,9
+471,"Mathematics, BA",MATH/HIST SCI  473,9
+471,"Mathematics, BA",MATH/COMP SCI/STAT  475,9
+471,"Mathematics, BA",MATH 490,9
+471,"Mathematics, BA",MATH 491,9
+471,"Mathematics, BA",MATH/COMP SCI  513,9
+471,"Mathematics, BA",MATH/COMP SCI  514,9
+471,"Mathematics, BA",MATH 519,9
+471,"Mathematics, BA",MATH 521,9
+471,"Mathematics, BA",MATH 522,9
+471,"Mathematics, BA",MATH/COMP SCI/I SY E/STAT  525,9
+471,"Mathematics, BA",MATH 531,9
+471,"Mathematics, BA",MATH 535,9
+471,"Mathematics, BA",MATH 540,9
+471,"Mathematics, BA",MATH 541,9
+471,"Mathematics, BA",MATH 542,9
+471,"Mathematics, BA",MATH 551,9
+471,"Mathematics, BA",MATH 552,9
+471,"Mathematics, BA",MATH 561,9
+471,"Mathematics, BA",MATH 567,9
+471,"Mathematics, BA",MATH 570,9
+471,"Mathematics, BA",MATH/PHILOS  571,9
+471,"Mathematics, BA",MATH 607,9
+471,"Mathematics, BA",MATH/B M I/BIOCHEM/BMOLCHEM  609,9
+471,"Mathematics, BA",MATH 616,9
+471,"Mathematics, BA",MATH 619,9
+471,"Mathematics, BA",MATH 621,9
+471,"Mathematics, BA",MATH 623,9
+471,"Mathematics, BA",MATH 627,9
+471,"Mathematics, BA",MATH 629,9
+471,"Mathematics, BA",MATH/I SY E/OTM/STAT  632,9
+471,"Mathematics, BA",MATH 635,9
+471,"Mathematics, BA",MATH 681,9
+471,"Mathematics, BA",MATH 682,9
+471,"Mathematics, BA",MATH 691,9
+471,"Mathematics, BA",MATH 692,9
+471,"Mathematics, BA",MATH 698,9
+471,"Mathematics, BA",MATH 699,9

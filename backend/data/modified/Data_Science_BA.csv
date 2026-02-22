@@ -1,102 +1,103 @@
 Group ID,Major,Course,Credits Required
-189,"Data Science, BA",MATH 221,
-190,"Data Science, BA",MATH 217,
-191,"Data Science, BA",MATH 222,
-192,"Data Science, BA",STAT 240,
-193,"Data Science, BA",STAT 340,
-194,"Data Science, BA",COMP SCI 220,
-195,"Data Science, BA",COMP SCI 300,
-196,"Data Science, BA",COMP SCI 320,
-197,"Data Science, BA",L I S 461,
-198,"Data Science, BA",E C E/I SY E  570,
-199,"Data Science, BA",MATH 320,
-199,"Data Science, BA",MATH 340,
-199,"Data Science, BA",MATH 341,
-199,"Data Science, BA",MATH 345,
-199,"Data Science, BA",MATH 375,
-200,"Data Science, BA",COMP SCI 400,
-200,"Data Science, BA",COMP SCI 412,
-200,"Data Science, BA",COMP SCI/MATH  513,
-200,"Data Science, BA",COMP SCI/MATH  514,
-200,"Data Science, BA",COMP SCI/E C E/I SY E  524,
-200,"Data Science, BA",COMP SCI 544,
-200,"Data Science, BA",COMP SCI 557,
-200,"Data Science, BA",COMP SCI 564,
-200,"Data Science, BA",COMP SCI 565,
-200,"Data Science, BA",COMP SCI/B M I  576,
-200,"Data Science, BA",GEOG 573,
-200,"Data Science, BA",GEOG 574,
-200,"Data Science, BA",MATH 444,
-200,"Data Science, BA",STAT/COMP SCI  471,
-201,"Data Science, BA",ACT SCI 657,
-201,"Data Science, BA",CIV ENGR 516,
-201,"Data Science, BA",ECON 400,
-201,"Data Science, BA",ECON 410,
-201,"Data Science, BA",ECON 460,
-201,"Data Science, BA",GEOG 560,
-201,"Data Science, BA",GEOG 579,
-201,"Data Science, BA",I SY E 575,
-201,"Data Science, BA",MATH 531,
-201,"Data Science, BA",MATH/I SY E/OTM/STAT  632,
-201,"Data Science, BA",MATH 635,
-201,"Data Science, BA",STAT/MATH  309,
-201,"Data Science, BA",STAT 311,
-201,"Data Science, BA",MATH/STAT  431,
-201,"Data Science, BA",STAT/MATH  310,
-201,"Data Science, BA",STAT 312,
-201,"Data Science, BA",STAT 349,
-201,"Data Science, BA",STAT 351,
-201,"Data Science, BA",STAT 421,
-201,"Data Science, BA",STAT/M E  424,
-201,"Data Science, BA",STAT 436,
-201,"Data Science, BA",STAT 443,
-201,"Data Science, BA",STAT 456,
-201,"Data Science, BA",STAT 461,
-201,"Data Science, BA",STAT 575,
-202,"Data Science, BA",BSE 405,
-202,"Data Science, BA",CHEM 361,
-202,"Data Science, BA",COMP SCI/E C E/M E  532,
-202,"Data Science, BA",COMP SCI/E C E/M E  539,
-202,"Data Science, BA",COMP SCI 540,
-202,"Data Science, BA",I SY E 521,
-202,"Data Science, BA",MATH 535,
-202,"Data Science, BA",MATH 616,
-202,"Data Science, BA",PHYSICS 361,
-202,"Data Science, BA",STAT 451,
-202,"Data Science, BA",STAT 453,
-203,"Data Science, BA",ACT SCI 655,
-203,"Data Science, BA",COMP SCI/I SY E/MATH  425,
-203,"Data Science, BA",COMP SCI/I SY E/MATH/STAT  525,
-203,"Data Science, BA",COMP SCI/E C E  533,
-203,"Data Science, BA",COMP SCI 541,
-203,"Data Science, BA",COMP SCI 559,
-203,"Data Science, BA",COMP SCI/B M I  567,
-203,"Data Science, BA",COMP SCI 577,
-203,"Data Science, BA",E C E 203,
-203,"Data Science, BA",ECON 315,
-203,"Data Science, BA",ECON 570,
-203,"Data Science, BA",ECON 695,
-203,"Data Science, BA",F&W ECOL 395,
-203,"Data Science, BA",F&W ECOL 458,
-203,"Data Science, BA",GEN BUS 317,
-203,"Data Science, BA",GEOG 378,
-203,"Data Science, BA",GEOG 572,
-203,"Data Science, BA",GEOG 575,
-203,"Data Science, BA",INFO SYS 423,
-203,"Data Science, BA",I SY E 323,
-203,"Data Science, BA",I SY E 412,
-203,"Data Science, BA",I SY E/M E  512,
-203,"Data Science, BA",I SY E 612,
-203,"Data Science, BA",L I S 407,
-203,"Data Science, BA",L I S 440,
-203,"Data Science, BA",L I S 464,
-203,"Data Science, BA",L I S 501,
-203,"Data Science, BA",LSC 460,
-203,"Data Science, BA",LSC 660,
-203,"Data Science, BA",MATH 331,
-203,"Data Science, BA",SOC 351,
-203,"Data Science, BA",SOC/C&E SOC  618,
-203,"Data Science, BA",SOC/C&E SOC  693,
-203,"Data Science, BA",SOIL SCI 585,
-203,"Data Science, BA",STAT 405,
-203,"Data Science, BA",STAT 433,
+189,"Data Science, BA",MATH 221,C1
+189,"Data Science, BA",MATH 217,C1
+191,"Data Science, BA",MATH 222,4
+192,"Data Science, BA",STAT 240,4
+193,"Data Science, BA",STAT 340,4
+194,"Data Science, BA",COMP SCI 220,C1
+194,"Data Science, BA",COMP SCI 300,C1
+196,"Data Science, BA",COMP SCI 320,4
+197,"Data Science, BA",L I S 461,C1
+197,"Data Science, BA",E C E/I SY E  570,C1
+197,"Data Science, BA",PHILOS 244,C1
+199,"Data Science, BA",MATH 320,C1
+199,"Data Science, BA",MATH 340,C1
+199,"Data Science, BA",MATH 341,C1
+199,"Data Science, BA",MATH 345,C1
+199,"Data Science, BA",MATH 375,C1
+200,"Data Science, BA",COMP SCI 400,C1
+200,"Data Science, BA",COMP SCI 412,C1
+200,"Data Science, BA",COMP SCI/MATH  513,C1
+200,"Data Science, BA",COMP SCI/MATH  514,C1
+200,"Data Science, BA",COMP SCI/E C E/I SY E  524,C1
+200,"Data Science, BA",COMP SCI 544,C1
+200,"Data Science, BA",COMP SCI 557,C1
+200,"Data Science, BA",COMP SCI 564,C1
+200,"Data Science, BA",COMP SCI 565,C1
+200,"Data Science, BA",COMP SCI/B M I  576,C1
+200,"Data Science, BA",GEOG 573,C1
+200,"Data Science, BA",GEOG 574,C1
+200,"Data Science, BA",MATH 444,C1
+200,"Data Science, BA",STAT/COMP SCI  471,C1
+201,"Data Science, BA",ACT SCI 657,C1
+201,"Data Science, BA",CIV ENGR 516,C1
+201,"Data Science, BA",ECON 400,C1
+201,"Data Science, BA",ECON 410,C1
+201,"Data Science, BA",ECON 460,C1
+201,"Data Science, BA",GEOG 560,C1
+201,"Data Science, BA",GEOG 579,C1
+201,"Data Science, BA",I SY E 575,C1
+201,"Data Science, BA",MATH 531,C1
+201,"Data Science, BA",MATH/I SY E/OTM/STAT  632,C1
+201,"Data Science, BA",MATH 635,C1
+201,"Data Science, BA",STAT/MATH  309,C1
+201,"Data Science, BA",STAT 311,C1
+201,"Data Science, BA",MATH/STAT  431,C1
+201,"Data Science, BA",STAT/MATH  310,C1
+201,"Data Science, BA",STAT 312,C1
+201,"Data Science, BA",STAT 349,C1
+201,"Data Science, BA",STAT 351,C1
+201,"Data Science, BA",STAT 421,C1
+201,"Data Science, BA",STAT/M E  424,C1
+201,"Data Science, BA",STAT 436,C1
+201,"Data Science, BA",STAT 443,C1
+201,"Data Science, BA",STAT 456,C1
+201,"Data Science, BA",STAT 461,C1
+201,"Data Science, BA",STAT 575,C1
+202,"Data Science, BA",BSE 405,C1
+202,"Data Science, BA",CHEM 361,C1
+202,"Data Science, BA",COMP SCI/E C E/M E  532,C1
+202,"Data Science, BA",COMP SCI/E C E/M E  539,C1
+202,"Data Science, BA",COMP SCI 540,C1
+202,"Data Science, BA",I SY E 521,C1
+202,"Data Science, BA",MATH 535,C1
+202,"Data Science, BA",MATH 616,C1
+202,"Data Science, BA",PHYSICS 361,C1
+202,"Data Science, BA",STAT 451,C1
+202,"Data Science, BA",STAT 453,C1
+203,"Data Science, BA",ACT SCI 655,C2
+203,"Data Science, BA",COMP SCI/I SY E/MATH  425,C2
+203,"Data Science, BA",COMP SCI/I SY E/MATH/STAT  525,C2
+203,"Data Science, BA",COMP SCI/E C E  533,C2
+203,"Data Science, BA",COMP SCI 541,C2
+203,"Data Science, BA",COMP SCI 559,C2
+203,"Data Science, BA",COMP SCI/B M I  567,C2
+203,"Data Science, BA",COMP SCI 577,C2
+203,"Data Science, BA",E C E 203,C2
+203,"Data Science, BA",ECON 315,C2
+203,"Data Science, BA",ECON 570,C2
+203,"Data Science, BA",ECON 695,C2
+203,"Data Science, BA",F&W ECOL 395,C2
+203,"Data Science, BA",F&W ECOL 458,C2
+203,"Data Science, BA",GEN BUS 317,C2
+203,"Data Science, BA",GEOG 378,C2
+203,"Data Science, BA",GEOG 572,C2
+203,"Data Science, BA",GEOG 575,C2
+203,"Data Science, BA",INFO SYS 423,C2
+203,"Data Science, BA",I SY E 323,C2
+203,"Data Science, BA",I SY E 412,C2
+203,"Data Science, BA",I SY E/M E  512,C2
+203,"Data Science, BA",I SY E 612,C2
+203,"Data Science, BA",L I S 407,C2
+203,"Data Science, BA",L I S 440,C2
+203,"Data Science, BA",L I S 464,C2
+203,"Data Science, BA",L I S 501,C2
+203,"Data Science, BA",LSC 460,C2
+203,"Data Science, BA",LSC 660,C2
+203,"Data Science, BA",MATH 331,C2
+203,"Data Science, BA",SOC 351,C2
+203,"Data Science, BA",SOC/C&E SOC  618,C2
+203,"Data Science, BA",SOC/C&E SOC  693,C2
+203,"Data Science, BA",SOIL SCI 585,C2
+203,"Data Science, BA",STAT 405,C2
+203,"Data Science, BA",STAT 433,C2

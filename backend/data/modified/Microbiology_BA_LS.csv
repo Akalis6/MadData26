@@ -1,58 +1,58 @@
 Group ID,Major,Course,Credits Required
-472,"Microbiology, BA (L&S)",MATH 171 & MATH 217,
-472,"Microbiology, BA (L&S)",MATH 221,
-473,"Microbiology, BA (L&S)",STAT 371,
-473,"Microbiology, BA (L&S)",STAT 301,
-473,"Microbiology, BA (L&S)",STAT 240,
-474,"Microbiology, BA (L&S)",CHEM 103 & CHEM 104,
-474,"Microbiology, BA (L&S)",CHEM 109,
-474,"Microbiology, BA (L&S)",CHEM 115 & CHEM 116,
-475,"Microbiology, BA (L&S)",CHEM 343,
-475,"Microbiology, BA (L&S)",CHEM 344,
-475,"Microbiology, BA (L&S)",CHEM 345,
-476,"Microbiology, BA (L&S)",BIOLOGY/BOTANY/ZOOLOGY  151 & BIOLOGY/BOTANY/ZOOLOGY  152,
-476,"Microbiology, BA (L&S)",BIOCORE 381 & BIOCORE 382 & BIOCORE 383 & BIOCORE 384 & BIOCORE 485,
-476,"Microbiology, BA (L&S)",ZOOLOGY/BIOLOGY  101 & ZOOLOGY/BIOLOGY  102 & BOTANY/BIOLOGY  130,
-477,"Microbiology, BA (L&S)",PHYSICS 103 & PHYSICS 104,
-477,"Microbiology, BA (L&S)",PHYSICS 207 & PHYSICS 208,
-477,"Microbiology, BA (L&S)",PHYSICS 201 & PHYSICS 202,
-478,"Microbiology, BA (L&S)",BIOCHEM 501,
-478,"Microbiology, BA (L&S)",BIOCHEM 507 & BIOCHEM 508,
-479,"Microbiology, BA (L&S)",MICROBIO 303,
-479,"Microbiology, BA (L&S)",MICROBIO 304,
-479,"Microbiology, BA (L&S)",MICROBIO 305,
-479,"Microbiology, BA (L&S)",MICROBIO 450,
-479,"Microbiology, BA (L&S)",MICROBIO 470,
-479,"Microbiology, BA (L&S)",MICROBIO 526,
-479,"Microbiology, BA (L&S)",MICROBIO 527,
-480,"Microbiology, BA (L&S)",MICROBIO 551,
-481,"Microbiology, BA (L&S)",MICROBIO/FOOD SCI  324,
-481,"Microbiology, BA (L&S)",MICROBIO/FOOD SCI  325,
-481,"Microbiology, BA (L&S)",MICROBIO/AN SCI/BOTANY  335,
-481,"Microbiology, BA (L&S)",MICROBIO 345,
-481,"Microbiology, BA (L&S)",MICROBIO 357,
-481,"Microbiology, BA (L&S)",MICROBIO/SOIL SCI  425,
-481,"Microbiology, BA (L&S)",MICROBIO 520,
-481,"Microbiology, BA (L&S)",MICROBIO/SOIL SCI  523,
-481,"Microbiology, BA (L&S)",MICROBIO 525,
-481,"Microbiology, BA (L&S)",MICROBIO/ONCOLOGY  545,
-481,"Microbiology, BA (L&S)",MICROBIO/BIOCHEM/GENETICS  612,
-481,"Microbiology, BA (L&S)",MICROBIO 657,
-481,"Microbiology, BA (L&S)",MICROBIO/BMOLCHEM  668,
-481,"Microbiology, BA (L&S)",BIOCHEM/M M & I 575,
-481,"Microbiology, BA (L&S)",BIOCHEM 601,
-481,"Microbiology, BA (L&S)",BOTANY 330,
-481,"Microbiology, BA (L&S)",BOTANY/PL PATH 332,
-481,"Microbiology, BA (L&S)",BOTANY/ENTOM/PL PATH 505,
-481,"Microbiology, BA (L&S)",CHEM 665,
-481,"Microbiology, BA (L&S)",COMP SCI/B M I  576,
-481,"Microbiology, BA (L&S)",F&W ECOL/SURG SCI 548,
-481,"Microbiology, BA (L&S)",FOOD SCI 550,
-481,"Microbiology, BA (L&S)",M M & I 301,
-481,"Microbiology, BA (L&S)",M M & I 341,
-481,"Microbiology, BA (L&S)",M M & I/ENTOM/PATH-BIO/ZOOLOGY 350,
-481,"Microbiology, BA (L&S)",M M & I 554,
-481,"Microbiology, BA (L&S)",ONCOLOGY/M M & I/PL PATH  640,
-481,"Microbiology, BA (L&S)",PATH-BIO/M M & I  528,
-481,"Microbiology, BA (L&S)",PL PATH 622,
-481,"Microbiology, BA (L&S)",PL PATH/BOTANY/GENETICS/M M & I  655,
+472,"Microbiology, BA (L&S)",MATH 171 & MATH 217,C1
+472,"Microbiology, BA (L&S)",MATH 221,C1
+473,"Microbiology, BA (L&S)",STAT 371,C1
+473,"Microbiology, BA (L&S)",STAT 301,C1
+473,"Microbiology, BA (L&S)",STAT 240,C1
+474,"Microbiology, BA (L&S)",CHEM 103 & CHEM 104,C1
+474,"Microbiology, BA (L&S)",CHEM 109,C1
+474,"Microbiology, BA (L&S)",CHEM 115 & CHEM 116,C1
+475,"Microbiology, BA (L&S)",CHEM 343,8
+475,"Microbiology, BA (L&S)",CHEM 344,8
+475,"Microbiology, BA (L&S)",CHEM 345,8
+476,"Microbiology, BA (L&S)",BIOLOGY/BOTANY/ZOOLOGY  151 & BIOLOGY/BOTANY/ZOOLOGY  152,C1
+476,"Microbiology, BA (L&S)",BIOCORE 381 & BIOCORE 382 & BIOCORE 383 & BIOCORE 384 & BIOCORE 485,C1
+476,"Microbiology, BA (L&S)",ZOOLOGY/BIOLOGY  101 & ZOOLOGY/BIOLOGY  102 & BOTANY/BIOLOGY  130,C1
+477,"Microbiology, BA (L&S)",PHYSICS 103 & PHYSICS 104,C1
+477,"Microbiology, BA (L&S)",PHYSICS 207 & PHYSICS 208,C1
+477,"Microbiology, BA (L&S)",PHYSICS 201 & PHYSICS 202,C1
+478,"Microbiology, BA (L&S)",BIOCHEM 501,C1
+478,"Microbiology, BA (L&S)",BIOCHEM 507 & BIOCHEM 508,C1
+479,"Microbiology, BA (L&S)",MICROBIO 303,17
+479,"Microbiology, BA (L&S)",MICROBIO 304,17
+479,"Microbiology, BA (L&S)",MICROBIO 305,17
+479,"Microbiology, BA (L&S)",MICROBIO 450,17
+479,"Microbiology, BA (L&S)",MICROBIO 470,17
+479,"Microbiology, BA (L&S)",MICROBIO 526,17
+479,"Microbiology, BA (L&S)",MICROBIO 527,17
+480,"Microbiology, BA (L&S)",MICROBIO 551,2
+481,"Microbiology, BA (L&S)",MICROBIO/FOOD SCI  324,6
+481,"Microbiology, BA (L&S)",MICROBIO/FOOD SCI  325,6
+481,"Microbiology, BA (L&S)",MICROBIO/AN SCI/BOTANY  335,6
+481,"Microbiology, BA (L&S)",MICROBIO 345,6
+481,"Microbiology, BA (L&S)",MICROBIO 357,6
+481,"Microbiology, BA (L&S)",MICROBIO/SOIL SCI  425,6
+481,"Microbiology, BA (L&S)",MICROBIO 520,6
+481,"Microbiology, BA (L&S)",MICROBIO/SOIL SCI  523,6
+481,"Microbiology, BA (L&S)",MICROBIO 525,6
+481,"Microbiology, BA (L&S)",MICROBIO/ONCOLOGY  545,6
+481,"Microbiology, BA (L&S)",MICROBIO/BIOCHEM/GENETICS  612,6
+481,"Microbiology, BA (L&S)",MICROBIO 657,6
+481,"Microbiology, BA (L&S)",MICROBIO/BMOLCHEM  668,6
+481,"Microbiology, BA (L&S)",BIOCHEM/M M & I 575,6
+481,"Microbiology, BA (L&S)",BIOCHEM 601,6
+481,"Microbiology, BA (L&S)",BOTANY 330,6
+481,"Microbiology, BA (L&S)",BOTANY/PL PATH 332,6
+481,"Microbiology, BA (L&S)",BOTANY/ENTOM/PL PATH 505,6
+481,"Microbiology, BA (L&S)",CHEM 665,6
+481,"Microbiology, BA (L&S)",COMP SCI/B M I  576,6
+481,"Microbiology, BA (L&S)",F&W ECOL/SURG SCI 548,6
+481,"Microbiology, BA (L&S)",FOOD SCI 550,6
+481,"Microbiology, BA (L&S)",M M & I 301,6
+481,"Microbiology, BA (L&S)",M M & I 341,6
+481,"Microbiology, BA (L&S)",M M & I/ENTOM/PATH-BIO/ZOOLOGY 350,6
+481,"Microbiology, BA (L&S)",M M & I 554,6
+481,"Microbiology, BA (L&S)",ONCOLOGY/M M & I/PL PATH  640,6
+481,"Microbiology, BA (L&S)",PATH-BIO/M M & I  528,6
+481,"Microbiology, BA (L&S)",PL PATH 622,6
+481,"Microbiology, BA (L&S)",PL PATH/BOTANY/GENETICS/M M & I  655,6
