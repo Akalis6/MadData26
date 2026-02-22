@@ -1,6 +1,10 @@
 import React, { useMemo, useRef, useState } from "react";
 import { getDocument, GlobalWorkerOptions } from "pdfjs-dist";
 import pdfWorker from "pdfjs-dist/build/pdf.worker?url";
+import Papa from "papaparse";
+//temp for test
+import { useQuery } from "convex/react";
+import { api } from "../../convex/_generated/api";
 
 GlobalWorkerOptions.workerSrc = pdfWorker;
 
@@ -8,13 +12,14 @@ type TermStatus = "completed" | "in_progress" | "cart";
 type CourseFlag = "in_progress" | "waitlisted" | "not_offered" | "no_longer_offered";
 
 type Course = {
-  id: string; // "COMP SCI 564"
+  id: string; // "COMP SCI 564" or catalog "ACCT I S 100"
   title: string;
   credits: number;
-  grade?: string; // "A", "BC", "INP", etc
+  grade?: string; // DARS only
   status: TermStatus;
   flag?: CourseFlag;
 };
+
 type Term = {
   name: string; // "Fall 2024"
   totalCredits: number;
@@ -40,6 +45,15 @@ type ParsedCourse = {
   title: string;
 };
 
+// -------- Catalog types (CSV) --------
+type CatalogCourse = {
+  courseId: string; // "ACCT I S 100"
+  title: string;
+  credits: number;
+  subject: string; // "ACCT I S"
+  number: string; // "100"
+};
+
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
@@ -53,7 +67,9 @@ function Icon({
   switch (name) {
     case "pdf":
       return (
-        <span className={classNames(common, "text-[12px] font-bold px-2 py-1 rounded bg-gray-100 border")}>PDF</span>
+        <span className={classNames(common, "text-[12px] font-bold px-2 py-1 rounded bg-gray-100 border")}>
+          PDF
+        </span>
       );
     case "plus":
       return <span className={classNames(common, "text-lg font-bold")}>＋</span>;
@@ -88,6 +104,7 @@ function Badge({ children }: { children: React.ReactNode }) {
 
 function CourseFlagIcon({ flag }: { flag?: CourseFlag }) {
   if (!flag) return null;
+
   const map: Record<CourseFlag, { icon: React.ReactNode; label: string }> = {
     in_progress: { icon: <Icon name="check" />, label: "Course is in progress" },
     waitlisted: { icon: <Icon name="warn" />, label: "Course is waitlisted" },
@@ -119,7 +136,11 @@ function AccordionRow({
 }) {
   return (
     <div className="rounded-lg border bg-white">
-      <button className="flex w-full items-center justify-between px-4 py-3 text-left" onClick={onToggle} type="button">
+      <button
+        className="flex w-full items-center justify-between px-4 py-3 text-left"
+        onClick={onToggle}
+        type="button"
+      >
         <span className="text-sm font-medium text-gray-900">{title}</span>
         <span className={classNames("transition-transform", open && "rotate-180")}>
           <Icon name="chev" />
@@ -136,7 +157,15 @@ function AccordionRow({
   );
 }
 
-function TermCard({ term, showGrades }: { term: Term; showGrades: boolean }) {
+function TermCard({
+  term,
+  showGrades,
+  onAddCourse,
+}: {
+  term: Term;
+  showGrades: boolean;
+  onAddCourse: (termName: string) => void;
+}) {
   const tabs = useMemo(
     () => [
       { key: "completed" as const, label: `Completed (${term.completedCount})` },
@@ -147,6 +176,11 @@ function TermCard({ term, showGrades }: { term: Term; showGrades: boolean }) {
   );
 
   const [activeTab, setActiveTab] = useState<TermStatus>("completed");
+  React.useEffect(() => {
+  if (term.cartCount > 0) {
+    setActiveTab("cart");
+  }
+}, [term.cartCount]);
   const courses = term.courses.filter((c) => c.status === activeTab);
 
   return (
@@ -156,7 +190,12 @@ function TermCard({ term, showGrades }: { term: Term; showGrades: boolean }) {
 
         <div className="text-sm text-gray-700">
           <span className="font-medium">{term.totalCredits.toFixed(2)}</span> credits{" "}
-          <button className="ml-2 inline-flex h-7 w-7 items-center justify-center rounded border bg-white hover:bg-gray-50" type="button">
+          <button
+            className="ml-2 inline-flex h-7 w-7 items-center justify-center rounded border bg-white hover:bg-gray-50"
+            type="button"
+            title="Add course"
+            onClick={() => onAddCourse(term.name)}
+          >
             <Icon name="plus" />
           </button>
         </div>
@@ -185,22 +224,26 @@ function TermCard({ term, showGrades }: { term: Term; showGrades: boolean }) {
           <div className="rounded-lg border border-dashed p-4 text-center text-sm text-gray-600">
             No courses in {activeTab.replace("_", " ")}.
             <div className="mt-3">
-              <button className="rounded border bg-white px-3 py-1.5 text-sm hover:bg-gray-50" type="button">
+              <button
+                className="rounded border bg-white px-3 py-1.5 text-sm hover:bg-gray-50"
+                type="button"
+                onClick={() => onAddCourse(term.name)}
+              >
                 + Add Course
               </button>
             </div>
           </div>
         ) : (
           <div className="space-y-3">
-            {courses.map((c) => (
-              <div key={`${term.name}-${c.id}-${c.title}-${c.grade}`} className="rounded-lg border bg-gray-50 px-3 py-2">
+            {courses.map((c, idx) => (
+              <div key={`${term.name}-${c.id}-${c.title}-${c.grade ?? "NA"}-${idx}`} className="rounded-lg border bg-gray-50 px-3 py-2">
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <div className="flex items-center">
                       <div className="truncate text-sm font-semibold text-gray-900">{c.id}</div>
                       <CourseFlagIcon flag={c.flag} />
                     </div>
-                    <div className="truncate text-xs text-gray-700">{c.title}</div>
+                    <div className="text-xs text-gray-700 whitespace-normal break-words">{c.title}</div>
                   </div>
 
                   <div className="flex shrink-0 items-center gap-3 text-xs text-gray-700">
@@ -234,7 +277,6 @@ async function extractTextFromPdf(file: File): Promise<string> {
     const page = await pdf.getPage(pageNum);
     const content = await page.getTextContent();
 
-    // Group text items into lines by Y coordinate (much more reliable than hasEOL)
     const items = (content.items as any[])
       .map((it) => ({
         str: (it.str ?? "").trim(),
@@ -243,7 +285,6 @@ async function extractTextFromPdf(file: File): Promise<string> {
       }))
       .filter((it) => it.str.length > 0);
 
-    // Sort top-to-bottom then left-to-right
     items.sort((a, b) => (b.y - a.y) || (a.x - b.x));
 
     const lines: string[] = [];
@@ -261,8 +302,6 @@ async function extractTextFromPdf(file: File): Promise<string> {
         currentLine.push(it.str);
         continue;
       }
-
-      // If Y changes enough, start new line
       if (Math.abs(it.y - currentY) > 2.5) {
         flush();
         currentY = it.y;
@@ -281,8 +320,6 @@ async function extractTextFromPdf(file: File): Promise<string> {
 
 function parseCourseLine(line: string): ParsedCourse | null {
   const trimmed = line.trim().replace(/\s+/g, " ");
-
-  // Match FA23 / FA 23 / etc
   const m = trimmed.match(/^(FA|SP|SU)\s*(\d{2})\s+(.+)$/i);
   if (!m) return null;
 
@@ -290,16 +327,10 @@ function parseCourseLine(line: string): ParsedCourse | null {
   const year = 2000 + Number(m[2]);
   let rest = m[3].trim();
 
-  // 🔧 KEY FIX:
-  // Insert a space between letters and a 3-4 digit course number when they get stuck together:
-  // "SCI252" -> "SCI 252", "PSYCH120" -> "PSYCH 120", "ECON3090" -> "ECON 3090"
-  // Also handles things like "3090A" if it ever appears.
+  // Fix stuck subject+number e.g. "SCI252" -> "SCI 252"
   rest = rest.replace(/([A-Z]{2,})(\d{3,4}[A-Z]?)/g, "$1 $2");
 
-  // Now parse the normalized line by tokens
   const tokens = rest.split(" ").filter(Boolean);
-
-  // Find first course number token (252, 3090, 120, 160, 564, etc)
   const idxNum = tokens.findIndex((t) => /^\d{3,4}[A-Z]?$/.test(t));
   if (idxNum <= 0) return null;
 
@@ -326,11 +357,9 @@ function parseCourseLine(line: string): ParsedCourse | null {
 }
 
 function extractCoursesFromDarsText(text: string): ParsedCourse[] {
-  // Normalize weird spacing
-  const normalized = text.replace(/\u00A0/g, " "); // non-breaking spaces
+  const normalized = text.replace(/\u00A0/g, " ");
   const anchorRe = /total\s+credits\s+for\s+the\s+degree/i;
 
-  // Try to find the anchor; if not found, fallback to whole document
   const m = normalized.match(anchorRe);
   const tail = m ? normalized.slice(m.index ?? 0) : normalized;
 
@@ -339,26 +368,18 @@ function extractCoursesFromDarsText(text: string): ParsedCourse[] {
     .map((l) => l.replace(/\s+/g, " ").trim())
     .filter(Boolean);
 
-  // Match FA23 / FA 23 / SP24 / etc
   const courseLineRe = /^(FA|SP|SU)\s*\d{2}\b/i;
 
   const candidates = lines.filter((l) => courseLineRe.test(l));
+  const parsed = candidates.map(parseCourseLine).filter((x): x is ParsedCourse => Boolean(x));
 
-  const parsed = candidates
-    .map(parseCourseLine)
-    .filter((x): x is ParsedCourse => Boolean(x));
-
-  // If still nothing, fallback: scan entire doc for term-coded lines (sometimes the anchor is missing)
   if (parsed.length === 0) {
     const allCandidates = normalized
       .split(/\r?\n/)
       .map((l) => l.replace(/\s+/g, " ").trim())
       .filter((l) => courseLineRe.test(l));
 
-    const parsedAll = allCandidates
-      .map(parseCourseLine)
-      .filter((x): x is ParsedCourse => Boolean(x));
-
+    const parsedAll = allCandidates.map(parseCourseLine).filter((x): x is ParsedCourse => Boolean(x));
     return dedupeParsed(parsedAll);
   }
 
@@ -379,8 +400,6 @@ function dedupeParsed(arr: ParsedCourse[]): ParsedCourse[] {
 }
 
 function academicYearStart(termCode: "FA" | "SP" | "SU", year: number) {
-  // Fall YEAR belongs to YEAR-YEAR+1
-  // Spring/Summer YEAR belongs to (YEAR-1)-YEAR
   return termCode === "FA" ? year : year - 1;
 }
 
@@ -403,8 +422,7 @@ function classYearLabelByIndex(idx: number): string {
   return labels[idx] ?? `Year ${idx + 1}`;
 }
 
-/** Build a Term object from parsed courses belonging to that term */
-function buildTerm(name: string, pcs: ParsedCourse[], showGradesDefault: boolean): Term {
+function buildTerm(name: string, pcs: ParsedCourse[]): Term {
   const courses: Course[] = pcs.map((pc) => {
     const id = `${pc.subject} ${pc.number}`;
     const status = courseStatusFromGrade(pc.grade);
@@ -413,7 +431,7 @@ function buildTerm(name: string, pcs: ParsedCourse[], showGradesDefault: boolean
       id,
       title: pc.title,
       credits: pc.credits,
-      grade: showGradesDefault ? pc.grade : pc.grade, // kept either way; UI toggle hides it
+      grade: pc.grade,
       status,
       flag: pc.grade.toUpperCase() === "INP" ? "in_progress" : undefined,
     };
@@ -421,6 +439,7 @@ function buildTerm(name: string, pcs: ParsedCourse[], showGradesDefault: boolean
 
   const completedCount = courses.filter((c) => c.status === "completed").length;
   const inProgressCount = courses.filter((c) => c.status === "in_progress").length;
+  const cartCount = courses.filter((c) => c.status === "cart").length;
   const totalCredits = courses.reduce((sum, c) => sum + c.credits, 0);
 
   return {
@@ -428,9 +447,27 @@ function buildTerm(name: string, pcs: ParsedCourse[], showGradesDefault: boolean
     totalCredits,
     completedCount,
     inProgressCount,
-    cartCount: 0,
+    cartCount,
     courses,
   };
+}
+
+// -------- Catalog helpers --------
+function safeNumber(x: any): number {
+  if (x == null) return 0;
+  const s = String(x).trim();
+  if (!s) return 0;
+  const n = Number.parseFloat(s);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function splitCourseId(courseId: string): { subject: string; number: string } {
+  const tokens = courseId.trim().split(/\s+/);
+  const last = tokens[tokens.length - 1] ?? "";
+  if (/^\d{2,5}[A-Z]?$/.test(last)) {
+    return { subject: tokens.slice(0, -1).join(" "), number: last };
+  }
+  return { subject: courseId.trim(), number: "" };
 }
 
 export default function DegreePlannerFrontend() {
@@ -441,7 +478,68 @@ export default function DegreePlannerFrontend() {
   const [isParsed, setIsParsed] = useState(false);
 
   const [plannerYears, setPlannerYears] = useState<PlannerYear[]>([]);
-  const [openMap, setOpenMap] = useState<Record<string, boolean>>({}); // key = classYearLabel
+  const [openMap, setOpenMap] = useState<Record<string, boolean>>({});
+
+  // -------- Catalog state --------
+  const [catalog, setCatalog] = useState<CatalogCourse[]>([]);
+  const [subjects, setSubjects] = useState<string[]>([]);
+
+  // Drawer state
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawerTermName, setDrawerTermName] = useState<string>("");
+  const [drawerSubject, setDrawerSubject] = useState<string>("");
+  const [drawerQuery, setDrawerQuery] = useState<string>("");
+  const [drawerResults, setDrawerResults] = useState<CatalogCourse[]>([]);
+
+  // Load catalog once
+  React.useEffect(() => {
+    fetch("/uwmadison_courses.csv")
+      .then((r) => r.text())
+      .then((text) => {
+        const parsed = Papa.parse<Record<string, any>>(text, {
+          header: true,
+          skipEmptyLines: true,
+        });
+
+        const rows = (parsed.data ?? []).filter(Boolean);
+
+        const mapped: CatalogCourse[] = rows
+          .map((row) => {
+            // 🔧 If your CSV headers differ, adjust here
+            const courseId =
+              row.courseId ?? row.course_id ?? row["course id"] ?? row["Course ID"] ?? row["courseId"] ?? "";
+            const title =
+              row.title ?? row.course_title ?? row["course title"] ?? row["Title"] ?? "";
+            const creditsRaw =
+  row.credit ??
+  row.credits ??
+  row.course_credits ??
+  row["Credit"] ??
+  row["Credits"] ??
+  row["credit"] ??
+  row["credit_hours"] ??
+  row["Credit Hours"] ??
+  0;
+            if (!courseId || !title) return null;
+
+            const { subject, number } = splitCourseId(String(courseId));
+            return {
+              courseId: String(courseId).trim(),
+              title: String(title).trim(),
+              credits: safeNumber(creditsRaw),
+              subject,
+              number,
+            };
+          })
+          .filter((x): x is CatalogCourse => Boolean(x));
+
+        setCatalog(mapped);
+
+        const subj = Array.from(new Set(mapped.map((c) => c.subject))).sort((a, b) => a.localeCompare(b));
+        setSubjects(subj);
+      })
+      .catch((e) => console.error("Failed to load uwmadison_courses.csv", e));
+  }, []);
 
   function triggerUpload() {
     fileInputRef.current?.click();
@@ -456,7 +554,6 @@ export default function DegreePlannerFrontend() {
     const text = await extractTextFromPdf(file);
     const parsedCourses = extractCoursesFromDarsText(text);
 
-    // Group by academic year start, then by term name
     const yearMap = new Map<number, Map<string, ParsedCourse[]>>();
 
     for (const c of parsedCourses) {
@@ -486,16 +583,15 @@ export default function DegreePlannerFrontend() {
         academicYearLabel: academicYearLabel(startYear),
         classYearLabel: classYearLabelByIndex(idx),
         terms: [
-          buildTerm(fall, fallCourses, showGrades),
-          buildTerm(spring, springCourses, showGrades),
-          buildTerm(summer, summerCourses, showGrades),
+          buildTerm(fall, fallCourses),
+          buildTerm(spring, springCourses),
+          buildTerm(summer, summerCourses),
         ],
       };
     });
 
     setPlannerYears(years);
 
-    // Default: open all years once parsed (matches UW feel)
     const nextOpen: Record<string, boolean> = {};
     for (const y of years) nextOpen[y.classYearLabel] = true;
     setOpenMap(nextOpen);
@@ -514,6 +610,67 @@ export default function DegreePlannerFrontend() {
     for (const y of plannerYears) next[y.classYearLabel] = false;
     setOpenMap(next);
   }
+
+  // -------- Drawer logic --------
+  function openCourseDrawerForTerm(termName: string) {
+    setDrawerTermName(termName);
+    setDrawerSubject("");
+    setDrawerQuery("");
+    setDrawerResults([]);
+    setDrawerOpen(true);
+  }
+
+  function runCourseSearch() {
+    const subj = drawerSubject.trim();
+    const q = drawerQuery.trim().toLowerCase();
+
+    let filtered = catalog;
+
+    if (subj) filtered = filtered.filter((c) => c.subject === subj);
+
+    if (q) {
+      filtered = filtered.filter((c) => {
+        const numMatch = c.number.toLowerCase().includes(q);
+        const titleMatch = c.title.toLowerCase().includes(q);
+        const idMatch = c.courseId.toLowerCase().includes(q);
+        return numMatch || titleMatch || idMatch;
+      });
+    }
+
+    setDrawerResults(filtered.slice(0, 200));
+  }
+
+  function addCatalogCourseToTerm(course: CatalogCourse) {
+    setPlannerYears((prev) =>
+      prev.map((py) => ({
+        ...py,
+        terms: py.terms.map((t) => {
+          if (t.name !== drawerTermName) return t;
+
+          const newCourse: Course = {
+            id: course.courseId,
+            title: course.title,
+            credits: course.credits,
+            status: "cart",
+          };
+
+          const courses = [newCourse, ...t.courses];
+
+          const completedCount = courses.filter((c) => c.status === "completed").length;
+          const inProgressCount = courses.filter((c) => c.status === "in_progress").length;
+          const cartCount = courses.filter((c) => c.status === "cart").length;
+          const totalCredits = courses.reduce((sum, c) => sum + c.credits, 0);
+
+          return { ...t, courses, completedCount, inProgressCount, cartCount, totalCredits };
+        }),
+      }))
+    );
+
+    setDrawerOpen(false);
+  }
+
+  //temp
+  const tasks = useQuery(api.tasks.get);
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -553,13 +710,19 @@ export default function DegreePlannerFrontend() {
           <div className="flex items-start justify-between">
             <div>
               <div className="text-xs text-gray-500">DARS Upload</div>
+              {/* for test */}
+              {tasks?.map(({_id, text }) => <div key={_id}>{text}</div>)}
               <div className="mt-1 flex items-center gap-2">
                 <span className="text-sm font-semibold text-gray-900">{uploadedFile ? "DARS Report" : "No file uploaded"}</span>
                 {uploadedFile && <Badge>PDF</Badge>}
               </div>
             </div>
 
-            <button type="button" className="rounded border bg-white px-2 py-1 text-sm hover:bg-gray-50" onClick={triggerUpload}>
+            <button
+              type="button"
+              className="rounded border bg-white px-2 py-1 text-sm hover:bg-gray-50"
+              onClick={triggerUpload}
+            >
               {uploadedFile ? "Replace" : "Upload"}
             </button>
 
@@ -581,8 +744,12 @@ export default function DegreePlannerFrontend() {
               <div className="mt-2 text-xs text-gray-600">
                 {uploadedFile ? (
                   <>
-                    <div className="truncate"><span className="font-medium">File:</span> {uploadedFile.name}</div>
-                    <div><span className="font-medium">Parsing:</span> {isParsed ? "Populated all years" : "Parsing..."}</div>
+                    <div className="truncate">
+                      <span className="font-medium">File:</span> {uploadedFile.name}
+                    </div>
+                    <div>
+                      <span className="font-medium">Parsing:</span> {isParsed ? "Populated all years" : "Parsing..."}
+                    </div>
                   </>
                 ) : (
                   <>Upload a DARS PDF to populate your plan automatically.</>
@@ -591,38 +758,41 @@ export default function DegreePlannerFrontend() {
             </div>
 
             <div className="flex items-center justify-between">
-  <span className="text-sm text-gray-700">Show Grades</span>
+              <span className="text-sm text-gray-700">Show Grades</span>
 
-  <button
-    type="button"
-    role="switch"
-    aria-checked={showGrades}
-    onClick={() => setShowGrades((v) => !v)}
-    className={classNames(
-      "relative inline-flex h-6 w-11 items-center rounded-full border transition-colors",
-      showGrades ? "bg-blue-600 border-blue-600" : "bg-gray-200 border-gray-300"
-    )}
-  >
-    <span
-      className={classNames(
-        "inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform",
-        showGrades ? "translate-x-5" : "translate-x-0"
-      )}
-    />
-  </button>
-</div>
+              <button
+                type="button"
+                role="switch"
+                aria-checked={showGrades}
+                onClick={() => setShowGrades((v) => !v)}
+                className={classNames(
+                  "relative inline-flex h-6 w-11 items-center rounded-full border transition-colors",
+                  showGrades ? "bg-blue-600 border-blue-600" : "bg-gray-200 border-gray-300"
+                )}
+              >
+                <span
+                  className={classNames(
+                    "inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform",
+                    showGrades ? "translate-x-5" : "translate-x-0"
+                  )}
+                />
+              </button>
+            </div>
           </div>
         </aside>
 
         {/* Center */}
         <section className="space-y-4">
           <div className="flex items-center justify-end gap-3 text-sm">
-            <button className="text-blue-700 hover:underline" type="button" onClick={expandAll}>Expand All</button>
+            <button className="text-blue-700 hover:underline" type="button" onClick={expandAll}>
+              Expand All
+            </button>
             <span className="text-gray-300">|</span>
-            <button className="text-blue-700 hover:underline" type="button" onClick={collapseAll}>Collapse All</button>
+            <button className="text-blue-700 hover:underline" type="button" onClick={collapseAll}>
+              Collapse All
+            </button>
           </div>
 
-          {/* All years (Freshman/Sophomore/Junior/Senior...) */}
           <div className="space-y-2">
             {plannerYears.length === 0 ? (
               <div className="rounded-lg border bg-white p-4 text-sm text-gray-600">
@@ -638,7 +808,7 @@ export default function DegreePlannerFrontend() {
                 >
                   <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
                     {y.terms.map((t) => (
-                      <TermCard key={t.name} term={t} showGrades={showGrades} />
+                      <TermCard key={t.name} term={t} showGrades={showGrades} onAddCourse={openCourseDrawerForTerm} />
                     ))}
                   </div>
                 </AccordionRow>
@@ -646,9 +816,106 @@ export default function DegreePlannerFrontend() {
             )}
           </div>
         </section>
-
-        
       </main>
+
+      {/* -------- Right-side Course Search Drawer -------- */}
+      {drawerOpen && (
+        <div className="fixed inset-0 z-50">
+          <div className="absolute inset-0 bg-black/30" onClick={() => setDrawerOpen(false)} />
+
+          <div className="absolute right-0 top-0 h-full w-full max-w-[420px] bg-white shadow-xl flex flex-col">
+            <div className="bg-sky-700 text-white px-5 py-4 flex items-center justify-between">
+              <div className="text-lg font-semibold">Course Search</div>
+              <button
+                className="rounded px-2 py-1 hover:bg-white/10"
+                type="button"
+                onClick={() => setDrawerOpen(false)}
+                aria-label="Close"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="p-5 space-y-5 overflow-auto">
+              <div className="text-xs text-gray-500">Term</div>
+              <div className="rounded border px-3 py-2 text-sm bg-gray-50">{drawerTermName || "—"}</div>
+
+              <div>
+                <label className="block text-xs text-gray-500 mb-2">Subject</label>
+                <select
+                  className="w-full rounded border px-3 py-2 text-sm"
+                  value={drawerSubject}
+                  onChange={(e) => setDrawerSubject(e.target.value)}
+                >
+                  <option value="">All subjects</option>
+                  {subjects.map((s) => (
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs text-gray-500 mb-2">Keyword, number</label>
+                <div className="flex gap-2">
+                  <input
+                    className="flex-1 rounded border px-3 py-2 text-sm"
+                    placeholder="e.g. 100 or accounting"
+                    value={drawerQuery}
+                    onChange={(e) => setDrawerQuery(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") runCourseSearch();
+                    }}
+                  />
+                  <button
+                    className="rounded border px-4 py-2 text-sm font-semibold hover:bg-gray-50"
+                    type="button"
+                    onClick={runCourseSearch}
+                  >
+                    Search
+                  </button>
+                </div>
+
+                <div className="mt-2 text-xs text-gray-500">
+                  {drawerSubject
+                    ? `Showing ${drawerResults.length} result(s) for ${drawerSubject}${drawerQuery ? ` + "${drawerQuery}"` : ""}`
+                    : `Select a subject to narrow results (or search all).`}
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {drawerResults.map((c) => (
+                  <div key={`${c.courseId}-${c.title}`} className="rounded-lg border bg-white p-3 shadow-sm">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <div className="text-sm font-semibold text-gray-900">{c.courseId}</div>
+                        <div className="text-xs text-gray-700 whitespace-normal break-words">{c.title}</div>
+                      </div>
+                      <div className="shrink-0 text-right text-xs text-gray-700">
+                        <div className="font-medium">{c.credits.toFixed(2)} Cr</div>
+                        <button
+                          type="button"
+                          className="mt-2 rounded border px-2 py-1 text-xs font-semibold text-blue-700 hover:bg-gray-50"
+                          onClick={() => addCatalogCourseToTerm(c)}
+                        >
+                          Add
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+                {drawerResults.length === 0 && (
+                  <div className="text-sm text-gray-600">
+                    No results yet. Choose a subject and click Search.
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
