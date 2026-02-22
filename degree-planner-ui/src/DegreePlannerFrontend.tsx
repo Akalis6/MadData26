@@ -2,9 +2,8 @@ import React, { useMemo, useRef, useState } from "react";
 import { getDocument, GlobalWorkerOptions } from "pdfjs-dist";
 import pdfWorker from "pdfjs-dist/build/pdf.worker?url";
 import Papa from "papaparse";
-import { useNavigate } from "react-router-dom";
 
-import { useQuery } from "convex/react";
+import { useQuery, useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
 
 GlobalWorkerOptions.workerSrc = pdfWorker;
@@ -70,6 +69,10 @@ function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
+function canon(x: string) {
+  return String(x).trim().toUpperCase().replace(/\s+/g, " ");
+}
+
 function Icon({
   name,
 }: {
@@ -105,28 +108,7 @@ function Icon({
       return null;
   }
 }
-function dedupeParsedCoursesStrong(arr: ParsedCourse[]): ParsedCourse[] {
-  const seen = new Set<string>();
-  const out: ParsedCourse[] = [];
 
-  for (const c of arr) {
-    // IMPORTANT: ignore title in key — title often differs slightly across repeats
-    // Also normalize subject spacing
-    const subject = c.subject.trim().replace(/\s+/g, " ");
-    const key = `${c.termCode}|${c.year}|${subject}|${c.number}|${c.credits}|${c.grade}`;
-
-    if (!seen.has(key)) {
-      seen.add(key);
-      out.push({
-        ...c,
-        subject,
-        title: c.title.trim().replace(/\s+/g, " "),
-      });
-    }
-  }
-
-  return out;
-}
 function Badge({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center rounded-full border bg-white px-2 py-0.5 text-xs font-medium text-gray-700">
@@ -375,36 +357,43 @@ function parseCourseLine(line: string): ParsedCourse | null {
   return {
     termCode,
     year,
-    subject,
+    subject: subject.trim().replace(/\s+/g, " "),
     number,
     credits: Number(creditsToken),
     grade: gradeToken,
-    title,
+    title: title.trim().replace(/\s+/g, " "),
   };
+}
+
+function dedupeParsedCoursesStrong(arr: ParsedCourse[]): ParsedCourse[] {
+  const seen = new Set<string>();
+  const out: ParsedCourse[] = [];
+
+  for (const c of arr) {
+    // ignore title (often differs slightly across repeated sections)
+    const key = `${c.termCode}|${c.year}|${canon(c.subject)}|${c.number}|${c.credits}|${canon(c.grade)}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      out.push(c);
+    }
+  }
+  return out;
 }
 
 function extractCoursesFromDarsText(text: string): ParsedCourse[] {
   const normalized = text.replace(/\u00A0/g, " ");
 
-  // Find the course list anchor
   const anchorRe = /total\s+credits\s+for\s+the\s+degree/i;
   const anchorMatch = normalized.match(anchorRe);
   const startIdx = anchorMatch?.index ?? 0;
-
-  // Slice from anchor onward
   const tail = normalized.slice(startIdx);
 
-  // Split into normalized lines
   const lines = tail
     .split(/\r?\n/)
     .map((l) => l.replace(/\s+/g, " ").trim())
     .filter(Boolean);
 
-  // Course lines always start with FA/SP/SU + 2-digit year
   const courseLineRe = /^(FA|SP|SU)\s*\d{2}\b/i;
-
-  // Many DARS PDFs repeat this list in other requirement sections.
-  // We stop parsing when we hit a "new section header" after we've started collecting courses.
   const stopRe =
     /(degree\s+requirements|general\s+education|major\s+requirements|breadth|communication|ethnic\s+studies|quantitative\s+reasoning|requirements\s+not\s+met|requirements\s+met|summary)/i;
 
@@ -419,16 +408,11 @@ function extractCoursesFromDarsText(text: string): ParsedCourse[] {
       continue;
     }
 
-    // Once we've started, stop when we hit a likely new section
     if (started && stopRe.test(line)) {
       break;
     }
-
-    // Also stop if we hit a long run of non-course lines (PDF noise)
-    // Optional: you can add a counter here, but stopRe usually works.
   }
 
-  // If we somehow got nothing, fallback to scanning the whole doc but still dedupe
   if (parsed.length === 0) {
     const allLines = normalized
       .split(/\r?\n/)
@@ -461,7 +445,7 @@ function termName(termCode: "FA" | "SP" | "SU", year: number) {
 }
 
 function courseStatusFromGrade(grade: string): TermStatus {
-  return grade.toUpperCase() === "INP" ? "in_progress" : "completed";
+  return canon(grade) === "INP" ? "in_progress" : "completed";
 }
 
 function classYearLabelByIndex(idx: number): string {
@@ -480,7 +464,7 @@ function buildTerm(name: string, pcs: ParsedCourse[]): Term {
       credits: pc.credits,
       grade: pc.grade,
       status,
-      flag: pc.grade.toUpperCase() === "INP" ? "in_progress" : undefined,
+      flag: canon(pc.grade) === "INP" ? "in_progress" : undefined,
     };
   });
 
@@ -499,7 +483,8 @@ function buildTerm(name: string, pcs: ParsedCourse[]): Term {
   };
 }
 
-// -------- Catalog helpers --------
+/** ---------- Catalog helpers ---------- */
+
 function safeNumber(x: any): number {
   if (x == null) return 0;
   const s = String(x).trim();
@@ -517,7 +502,8 @@ function splitCourseId(courseId: string): { subject: string; number: string } {
   return { subject: courseId.trim(), number: "" };
 }
 
-// -------- Manual planner helpers --------
+/** ---------- Manual planner helpers ---------- */
+
 function makeEmptyTerm(name: string): Term {
   return {
     name,
@@ -537,34 +523,56 @@ function createEmptyFourYears(startYear: number): PlannerYear[] {
     return {
       academicYearLabel: `${fallYear}-${springYear}`,
       classYearLabel: label,
-      terms: [
-        makeEmptyTerm(`Fall ${fallYear}`),
-        makeEmptyTerm(`Spring ${springYear}`),
-        makeEmptyTerm(`Summer ${springYear}`),
-      ],
+      terms: [makeEmptyTerm(`Fall ${fallYear}`), makeEmptyTerm(`Spring ${springYear}`), makeEmptyTerm(`Summer ${springYear}`)],
     };
   });
 }
 
-function flattenStudentCourses(years: PlannerYear[]) {
-  const out: Array<{ courseId: string; credits: number; status: "completed" | "in_progress" | "planned" }> = [];
+function flattenForStorage(years: PlannerYear[]) {
+  const out: Array<{
+    term: string;
+    courseId: string;
+    title: string;
+    credits: number;
+    status: "completed" | "in_progress" | "planned";
+    grade?: string;
+  }> = [];
+
   for (const y of years) {
     for (const t of y.terms) {
       for (const c of t.courses) {
         out.push({
+          term: t.name,
           courseId: c.id,
+          title: c.title,
           credits: c.credits,
           status: c.status === "cart" ? "planned" : c.status,
+          grade: c.grade,
         });
       }
     }
   }
+
   return out;
 }
 
+async function sha256File(file: File): Promise<string | undefined> {
+  try {
+    const buf = await file.arrayBuffer();
+    const hash = await crypto.subtle.digest("SHA-256", buf);
+    return Array.from(new Uint8Array(hash))
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+  } catch {
+    return undefined;
+  }
+}
+
 export default function DegreePlannerFrontend() {
-  const navigate = useNavigate();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  // For now: no auth → fixed userId. Replace later with auth identity.
+  const userId = "local-dev";
 
   const [activePage, setActivePage] = useState<PlannerMode>("dars");
   const [degreeFilter, setDegreeFilter] = useState<"BA" | "BS">("BS");
@@ -587,15 +595,22 @@ export default function DegreePlannerFrontend() {
   const [drawerQuery, setDrawerQuery] = useState<string>("");
   const [drawerResults, setDrawerResults] = useState<CatalogCourse[]>([]);
 
-  // Convex majors list (optional; useful as “loaded” signal)
+  // Convex
+  const upsertStudentPlan = useMutation(api.studentPlans.upsert);
   const majorsFromConvex = useQuery(api.majors.list, {});
-
-  // Convex: Top 5 majors
-  const studentCoursesForProgress = useMemo(() => flattenStudentCourses(plannerYears), [plannerYears]);
+  const studentCoursesForProgress = useMemo(() => {
+    // progress query wants a light list; reuse flattenForStorage then map
+    const flat = flattenForStorage(plannerYears);
+    return flat.map((c) => ({
+      courseId: c.courseId,
+      credits: c.credits,
+      status: c.status, // completed/in_progress/planned
+    }));
+  }, [plannerYears]);
 
   const topMajors = useQuery(api.progress.topMajors, {
     studentCourses: studentCoursesForProgress,
-    topN: 10,
+    topN: 5,
     includePlanned: activePage === "degree",
     degreeType: degreeFilter,
   }) as TopMajor[] | undefined;
@@ -616,7 +631,7 @@ export default function DegreePlannerFrontend() {
     setIsParsed(true);
   }, [activePage]);
 
-  // Load course catalog once
+  // Load course catalog once from /public
   React.useEffect(() => {
     fetch("/uwmadison_courses.csv")
       .then((r) => r.text())
@@ -629,7 +644,6 @@ export default function DegreePlannerFrontend() {
             const courseId =
               row.courseId ?? row.course_id ?? row["course id"] ?? row["Course ID"] ?? row["courseId"] ?? "";
             const title = row.title ?? row.course_title ?? row["course title"] ?? row["Title"] ?? "";
-
             const creditsRaw =
               row.credit ??
               row.credits ??
@@ -675,7 +689,6 @@ export default function DegreePlannerFrontend() {
     const parsedCourses = extractCoursesFromDarsText(text);
 
     const yearMap = new Map<number, Map<string, ParsedCourse[]>>();
-
     for (const c of parsedCourses) {
       const start = academicYearStart(c.termCode, c.year);
       if (!yearMap.has(start)) yearMap.set(start, new Map());
@@ -712,8 +725,35 @@ export default function DegreePlannerFrontend() {
     for (const y of years) nextOpen[y.classYearLabel] = true;
     setOpenMap(nextOpen);
 
+    // Save parsed DARS to Convex (structured, not the PDF)
+    const hash = await sha256File(file);
+    await upsertStudentPlan({
+      userId,
+      source: "dars",
+      darsFileName: file.name,
+      darsFileHash: hash,
+      courses: flattenForStorage(years),
+    });
+
     setIsParsed(true);
   }
+
+  // Save manual plan to Convex (debounced)
+  React.useEffect(() => {
+    if (activePage !== "degree") return;
+    // If plannerYears not initialized yet, skip
+    if (plannerYears.length === 0) return;
+
+    const handle = setTimeout(() => {
+      upsertStudentPlan({
+        userId,
+        source: "manual",
+        courses: flattenForStorage(plannerYears),
+      }).catch(console.error);
+    }, 700);
+
+    return () => clearTimeout(handle);
+  }, [activePage, plannerYears, upsertStudentPlan]);
 
   function expandAll() {
     const next: Record<string, boolean> = {};
@@ -727,6 +767,7 @@ export default function DegreePlannerFrontend() {
     setOpenMap(next);
   }
 
+  // Drawer logic
   function openCourseDrawerForTerm(termName: string) {
     setDrawerTermName(termName);
     setDrawerSubject("");
@@ -761,6 +802,9 @@ export default function DegreePlannerFrontend() {
         terms: py.terms.map((t) => {
           if (t.name !== drawerTermName) return t;
 
+          // avoid duplicate planned course in the same term
+          if (t.courses.some((x) => x.id === course.courseId && x.status === "cart")) return t;
+
           const newCourse: Course = {
             id: course.courseId,
             title: course.title,
@@ -785,6 +829,7 @@ export default function DegreePlannerFrontend() {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      {/* Top Nav */}
       <header className="bg-red-700 text-white">
         <div className="mx-auto flex h-14 w-full items-center justify-between px-6">
           <div className="flex items-center gap-6">
@@ -808,13 +853,6 @@ export default function DegreePlannerFrontend() {
               >
                 Degree Planner
               </button>
-              <button
-                type="button"
-                onClick={() => navigate("/ai-advisor")}
-                className="opacity-90 hover:opacity-100"
-              >
-                AI Advisor
-              </button>
             </nav>
           </div>
 
@@ -831,6 +869,7 @@ export default function DegreePlannerFrontend() {
       </header>
 
       <main className="mx-auto grid w-full grid-cols-1 gap-4 px-6 py-4 lg:grid-cols-[320px_minmax(0,1fr)]">
+        {/* Left */}
         <aside className="rounded-lg border bg-white p-4">
           {activePage === "dars" ? (
             <>
@@ -843,11 +882,7 @@ export default function DegreePlannerFrontend() {
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  className="rounded border bg-white px-2 py-1 text-sm hover:bg-gray-50"
-                  onClick={triggerUpload}
-                >
+                <button type="button" className="rounded border bg-white px-2 py-1 text-sm hover:bg-gray-50" onClick={triggerUpload}>
                   {uploadedFile ? "Replace" : "Upload"}
                 </button>
 
@@ -946,7 +981,7 @@ export default function DegreePlannerFrontend() {
               </div>
             </div>
 
-            {/* Top 5 majors progress bars */}
+            {/* Top 5 majors */}
             <div className="rounded-lg border bg-gray-50 p-3">
               <div className="text-xs text-gray-500 mb-2">Top majors you’re closest to</div>
 
@@ -980,6 +1015,7 @@ export default function DegreePlannerFrontend() {
           </div>
         </aside>
 
+        {/* Center */}
         <section className="space-y-4">
           <div className="flex items-center justify-end gap-3 text-sm">
             <button className="text-blue-700 hover:underline" type="button" onClick={expandAll}>Expand All</button>
@@ -1018,6 +1054,7 @@ export default function DegreePlannerFrontend() {
       {drawerOpen && (
         <div className="fixed inset-0 z-50">
           <div className="absolute inset-0 bg-black/30" onClick={() => setDrawerOpen(false)} />
+
           <div className="absolute right-0 top-0 h-full w-full max-w-[420px] bg-white shadow-xl flex flex-col">
             <div className="bg-sky-700 text-white px-5 py-4 flex items-center justify-between">
               <div className="text-lg font-semibold">Course Search</div>
@@ -1055,6 +1092,12 @@ export default function DegreePlannerFrontend() {
                   <button className="rounded border px-4 py-2 text-sm font-semibold hover:bg-gray-50" type="button" onClick={runCourseSearch}>
                     Search
                   </button>
+                </div>
+
+                <div className="mt-2 text-xs text-gray-500">
+                  {drawerSubject
+                    ? `Showing ${drawerResults.length} result(s) for ${drawerSubject}${drawerQuery ? ` + "${drawerQuery}"` : ""}`
+                    : `Select a subject to narrow results (or search all).`}
                 </div>
               </div>
 

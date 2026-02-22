@@ -10,6 +10,7 @@
 
 import type * as majors from "../majors.js";
 import type * as progress from "../progress.js";
+import type * as studentPlans from "../studentPlans.js";
 import type * as tasks from "../tasks.js";
 
 import type {
@@ -21,6 +22,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   majors: typeof majors;
   progress: typeof progress;
+  studentPlans: typeof studentPlans;
   tasks: typeof tasks;
 }>;
 

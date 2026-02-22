@@ -58,4 +58,37 @@ export default defineSchema({
         TotalCredits: v.number(),
         GPA: v.number(),
     }),
+    StudentPlans: defineTable({
+  // If you don’t have auth yet, use a fixed userId like "local-dev".
+  // If you do have auth, store ctx.auth.getUserIdentity().subject instead.
+  userId: v.string(),
+
+  // Optional: helps if you support multiple schools
+  university: v.optional(v.id("UniversityTable")),
+
+  // "dars" means it came from an uploaded report; "manual" if from planner
+  source: v.union(v.literal("dars"), v.literal("manual")),
+
+  // When this plan was last updated
+  updatedAt: v.number(),
+
+  // Helpful metadata (optional)
+  darsFileName: v.optional(v.string()),
+  darsFileHash: v.optional(v.string()), // prevents re-upload duplicates
+
+  // Flattened course list (canonical!)
+  courses: v.array(
+    v.object({
+      term: v.string(), // "Fall 2022"
+      courseId: v.string(), // "COMP SCI 300"
+      title: v.string(),
+      credits: v.number(),
+      status: v.union(v.literal("completed"), v.literal("in_progress"), v.literal("planned")),
+      grade: v.optional(v.string()), // only for DARS typically
+      flags: v.optional(v.array(v.string())), // future-proof
+    })
+  ),
+})
+  .index("by_user_source", ["userId", "source"])
+  .index("by_user", ["userId"]),
 });
